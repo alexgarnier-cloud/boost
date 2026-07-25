@@ -2339,14 +2339,12 @@ function ptTrack(which,btn){
 </script>
 
 <style>
-/* La barre reste pleine largeur, mais son contenu s'aligne sur la colonne des sections
-   (1160px + 24px de gouttière), comme l'en-tête du blog. */
-nav{
+nav, footer{
   padding-left:max(20px, calc((100% - 1160px) / 2 + 24px)) !important;
   padding-right:max(20px, calc((100% - 1160px) / 2 + 24px)) !important;
 }
 @media (max-width:760px){
-  nav{ padding-left:16px !important; padding-right:16px !important; }
+  nav, footer{ padding-left:16px !important; padding-right:16px !important; }
   /* La nav fixe passe sur trois rangées en petite largeur : sans marge haute, le
      surtitre du hero se retrouvait masqué DERRIÈRE la barre. */
   .hero{ padding-top:190px !important; }
