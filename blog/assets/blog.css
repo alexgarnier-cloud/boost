@@ -172,3 +172,38 @@ tbody tr:nth-child(even) td{background:var(--surface)}
   /* évite le zoom auto iOS sur les champs */
   input,select,textarea,button{font-size:16px}
 }
+
+/* ---------- en-tête à deux niveaux (25/07) ----------
+   Ligne 1 : le menu du site, identique à la page d'accueil, avec Blog allumé.
+   Ligne 2 : les rubriques du blog, sous le trait de séparation. */
+.bh-sub{position:sticky;top:56px;z-index:49;background:var(--surface);border-bottom:1px solid var(--line)}
+.bh-sub-in{max-width:var(--maxw);margin:0 auto;padding:10px 24px;display:flex;align-items:center;gap:18px}
+.bh-sub-l{font-size:11px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.bh-subnav{display:flex;gap:18px;font-size:13.5px;overflow-x:auto;scrollbar-width:none;white-space:nowrap;padding:2px 0}
+.bh-subnav::-webkit-scrollbar{display:none}
+.bh-subnav a{color:var(--muted);font-weight:500;padding:4px 0}
+.bh-subnav a:hover,.bh-subnav a.on{color:var(--violet);border-bottom:2px solid var(--lime)}
+
+/* ---------- signature de l'auteur (E-E-A-T, signal GEO) ---------- */
+.author{display:flex;gap:24px;align-items:flex-start;background:var(--surface);
+  border:1px solid var(--line);border-left:5px solid var(--lime);border-radius:0 14px 14px 0;
+  padding:26px 28px;margin:38px 0 6px}
+.author img{width:96px;height:96px;border-radius:50%;object-fit:cover;flex-shrink:0;
+  border:3px solid #fff;box-shadow:0 4px 16px rgba(59,28,95,.12)}
+.author .a-lbl{font-size:11px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--violet)}
+.author h3{font-family:'Space Grotesk',sans-serif;font-size:20px;color:var(--ink);margin-top:6px}
+.author .a-role{font-size:13.5px;color:var(--violet);font-weight:600;margin-top:2px}
+.author p{font-size:14.5px;color:var(--muted);line-height:1.65;margin-top:10px;max-width:52em}
+.author .a-li{display:inline-block;margin-top:12px;font-size:14px;font-weight:700;color:var(--violet)}
+.author .a-li:hover{border-bottom:2px solid var(--lime)}
+
+/* les sources deviennent des liens */
+.sources a{color:var(--violet);font-weight:600}
+.sources a:hover{border-bottom:1px solid var(--lime)}
+
+@media (max-width:760px){
+  .bh-sub{top:auto;position:static}
+  .bh-sub-in{padding:8px 18px;gap:12px}
+  .author{flex-direction:column;gap:16px;padding:22px 20px}
+  .author img{width:76px;height:76px}
+}
