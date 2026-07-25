@@ -1741,6 +1741,7 @@ table{max-width:100%}
     <a href="#lp-partners">Partenaires</a>
 <a href="blog/">Blog</a>
   </div>
+  <a class="nav-cta" href="demande/?objet=demo">Demander une démo</a>
 </nav>
 
 <section class="hero" id="top">
@@ -1953,7 +1954,7 @@ table{max-width:100%}
     <div class="body">
       <h3>Votre réseau, le prochain <span>cas mesuré</span> ?</h3>
       <p>Commencez par un POC Data Discovery, on connecte, on analyse, on vous restitue le potentiel d'activation chiffré de votre base.</p>
-      <div class="cta"><a href="mailto:contact@dekuple.com">Demander une étude de potentiel&nbsp;→</a></div>
+      <div class="cta"><a href="demande/?objet=poc">Demander une étude de potentiel&nbsp;→</a></div>
     </div>
   </div>
 
@@ -2100,65 +2101,8 @@ table{max-width:100%}
   </div>
 
   <!-- ── Formulaire POC ── -->
-  <div class="dd-form-wrap">
-    <div class="dd-form-header">
-      <h3>Organiser un POC <span>"Data Discovery"</span></h3>
-      <p>Démarrez sans engagement, les résultats de l'analyse restent votre propriété.</p>
-    </div>
-    <form class="dd-form" id="dd-form" onsubmit="submitDDForm(event)">
-      <div class="dd-row-2">
-        <div class="dd-field">
-          <label>Prénom</label>
-          <input type="text" name="prenom" placeholder="Marie" required>
-        </div>
-        <div class="dd-field">
-          <label>Nom</label>
-          <input type="text" name="nom" placeholder="Dupont" required>
-        </div>
-      </div>
-      <div class="dd-row-2">
-        <div class="dd-field">
-          <label>Société / Enseigne</label>
-          <input type="text" name="societe" placeholder="Monoprix" required>
-        </div>
-        <div class="dd-field">
-          <label>Fonction</label>
-          <input type="text" name="role" placeholder="Directeur Marketing">
-        </div>
-      </div>
-      <div class="dd-row-2">
-        <div class="dd-field">
-          <label>Email professionnel</label>
-          <input type="email" name="email" placeholder="marie@enseigne.fr" required>
-        </div>
-        <div class="dd-field">
-          <label>Téléphone</label>
-          <input type="tel" name="tel" placeholder="+33 6 00 00 00 00">
-        </div>
-      </div>
-      <div class="dd-field">
-        <label>Volume estimé de données clients</label>
-        <select name="volume">
-          <option value="">Sélectionnez…</option>
-          <option>Moins de 100 000 contacts</option>
-          <option>100 000 – 1 million</option>
-          <option>1 million – 10 millions</option>
-          <option>Plus de 10 millions</option>
-        </select>
-      </div>
-      <div class="dd-field">
-        <label>Contexte du projet <span class="opt">(optionnel)</span></label>
-        <textarea name="message" placeholder="Secteur d'activité, objectifs, canaux utilisés, défis actuels..."></textarea>
-      </div>
-      <input type="hidden" name="_subject" value="Nouvelle demande POC Data Discovery, Boost Platform">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="text" name="_honey" style="display:none">
-      <button type="submit" class="dd-submit">Organiser mon POC Data Discovery →</button>
-    </form>
-    <div id="dd-success" class="dd-success">
-      ✓ Votre demande a bien été envoyée, nous vous recontactons sous 48h.
-    </div>
+  <div style="margin-top:34px">
+    <a class="dd-submit" style="display:inline-block;text-decoration:none" href="demande/?objet=poc">Démarrer un POC Data Discovery →</a>
   </div>
 
 </section>
@@ -2351,7 +2295,7 @@ table{max-width:100%}
     <div class="body">
       <h3>Devenez <span>partenaire BOOST</span></h3>
       <p>Agence ou ESN, parlons de votre marché et construisons ensemble votre offre data.</p>
-      <div class="cta"><a href="mailto:partenaires@dekuple.com">Rejoindre le programme partenaires&nbsp;→</a></div>
+      <div class="cta"><a href="demande/?objet=partenaire">Rejoindre le programme partenaires&nbsp;→</a></div>
     </div>
   </div>
 
@@ -2397,23 +2341,5 @@ function ptTrack(which,btn){
   document.getElementById('pt-esn').classList.toggle('show',which==='esn');
 }
 // discovery form
-function submitDDForm(e){
-  e.preventDefault();
-  var form=document.getElementById('dd-form');
-  var btn=form.querySelector('.dd-submit');
-  var orig=btn.textContent;
-  btn.disabled=true; btn.textContent='Envoi en cours…';
-  fetch('https://formsubmit.co/ajax/a.garnier@dekuple.com',{
-    method:'POST',
-    headers:{'Accept':'application/json'},
-    body:new FormData(form)
-  }).then(function(r){return r.json();}).then(function(){
-    form.style.display='none';
-    document.getElementById('dd-success').style.display='block';
-  }).catch(function(){
-    btn.disabled=false; btn.textContent=orig;
-    alert("Une erreur est survenue lors de l'envoi. Merci de réessayer, ou écrivez-nous à a.garnier@dekuple.com.");
-  });
-}
 </script>
 </body></html>
