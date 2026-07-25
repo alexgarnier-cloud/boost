@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Qu&#x27;est-ce que la résolution d&#x27;identité (identity resolution) ?</title>
+<meta name="description" content="Définition de l&#x27;identity resolution, mécanique de rapprochement des identifiants, rôle dans la vue client unifiée et application concrète aux réseaux de points de vente.">
+<link rel="canonical" href="https://alexgarnier-cloud.github.io/boost/blog/resolution-identite-definition/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Qu&#x27;est-ce que la résolution d&#x27;identité (identity resolution) ?">
+<meta property="og:description" content="Définition de l&#x27;identity resolution, mécanique de rapprochement des identifiants, rôle dans la vue client unifiée et application concrète aux réseaux de points de vente.">
+<meta property="og:url" content="https://alexgarnier-cloud.github.io/boost/blog/resolution-identite-definition/">
+<meta property="og:site_name" content="Boost Platform">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Qu&#x27;est-ce que la résolution d&#x27;identité (identity resolution) ?">
+<meta name="twitter:description" content="Définition de l&#x27;identity resolution, mécanique de rapprochement des identifiants, rôle dans la vue client unifiée et application concrète aux réseaux de points de vente.">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/blog.css?v=4">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Qu'est-ce que la résolution d'identité ?", "description": "Définition de l'identity resolution, mécanique de rapprochement des identifiants, rôle dans la vue client unifiée et application concrète aux réseaux de points de vente.", "inLanguage": "fr-FR", "datePublished": "2026-07-25", "dateModified": "2026-07-25", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://alexgarnier-cloud.github.io/boost/blog/resolution-identite-definition/"}, "author": {"@type": "Organization", "name": "Boost Platform"}, "publisher": {"@type": "Organization", "name": "Boost Platform"}, "articleSection": "Identité client & data"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Blog", "item": "https://alexgarnier-cloud.github.io/boost/blog/"}, {"@type": "ListItem", "position": 2, "name": "Identité client & data", "item": "https://alexgarnier-cloud.github.io/boost/blog/identite-client/"}, {"@type": "ListItem", "position": 3, "name": "Qu'est-ce que la résolution d'identité ?", "item": "https://alexgarnier-cloud.github.io/boost/blog/resolution-identite-definition/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Que signifie résolution d'identité ?", "acceptedAnswer": {"@type": "Answer", "text": "C'est le processus qui rapproche des identifiants épars (email, téléphone, carte de fidélité, compte web, identifiant mobile) pour reconstituer un individu unique, puis maintenir ce rattachement dans le temps."}}, {"@type": "Question", "name": "Pourquoi est-ce indispensable à une vue client unifiée ?", "acceptedAnswer": {"@type": "Answer", "text": "Parce qu'une vue client n'a de sens que si chaque ligne correspond à une personne réelle. Tant que les identifiants ne convergent pas, la base compte des doublons, la pression commerciale est mal calibrée et la mesure est faussée."}}, {"@type": "Question", "name": "Comment mesure-t-on la qualité d'une résolution d'identité ?", "acceptedAnswer": {"@type": "Answer", "text": "Par le taux de matching, c'est-à-dire la part des enregistrements effectivement rattachés à une identité, et par le taux d'erreur de rapprochement. Les deux se lisent ensemble : un taux élevé obtenu au prix de faux rapprochements n'a pas de valeur."}}, {"@type": "Question", "name": "Est-ce compatible avec le RGPD ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, sous conditions : base légale, information des personnes, minimisation et, le plus souvent, pseudonymisation des identifiants utilisés pour le rapprochement. La traçabilité des opérations fait partie du dispositif."}}]}</script>
+</head>
+<body>
+<header class="bh"><div class="bh-in">
+  <a class="bh-logo" href="../"><img src="../../assets/bp-logo.png" alt="Boost Platform" width="900" height="103"></a>
+  <nav class="bh-nav"><a href="../../">Accueil</a><a href="../drive-to-store/">Drive-to-store</a><a href="../identite-client/" class="on">Identité client</a><a href="../data-discovery/">Data Discovery</a><a href="../marketing-local/">Marketing local</a><a href="../retail-media/">Retail media</a><a href="../conformite/">Conformité</a><a href="../etudes/">Études</a></nav>
+  <a class="bh-cta" href="https://alexgarnier-cloud.github.io/boost/#lp-demo">Demander une démo</a>
+</div></header>
+<div class="wrap">
+  <div class="mast" style="padding-bottom:26px">
+    <div class="kick">Identité client</div>
+    <h1>Qu&#x27;est-ce que la résolution d&#x27;identité ?</h1>
+    <p class="lede">La résolution d'identité (identity resolution en anglais) désigne l'ensemble des méthodes qui permettent de rassembler, sous un même profil, les multiples traces qu'une même personne laisse à travers ses points de contact avec une marque. Un visiteur qui consulte un site web sur son mobile, clique sur une campagne depuis son ordinateur, ouvre l'application, puis passe en caisse dans un point de vente physique génère à chaque fois des signaux distincts. Sans réconciliation, ces signaux restent éclatés et donnent l'illusion de plusieurs individus là où il n'y en a qu'un. La résolution d'identité vise précisément à relier ces fragments pour reconstituer une vue cohérente de chaque client.</p>
+  </div>
+  <div class="art">
+    <div class="art-body">
+      <div class="byline"><span>Boost Platform</span><span class="dot"></span><span>2026-07-25</span><span class="dot"></span><span>6 min de lecture</span><span class="dot"></span><a href="https://alexgarnier-cloud.github.io/boost/blog/identite-client/">Identité client &amp; data</a></div>
+      <div class="tldr"><span class="b">L'essentiel</span><ul><li>Résoudre une identité, c'est décider que plusieurs traces dispersées appartiennent à la même personne, puis les rattacher à un identifiant unique et stable.</li><li>C'est la condition de la vue client unifiée : sans elle, un même client compte pour trois ou quatre individus différents selon les canaux.</li><li>Deux familles de méthodes coexistent, le rapprochement sur clés fiables et l'estimation par faisceau de signaux, souvent combinées.</li><li>L'indicateur qui compte pour une direction marketing n'est pas la mécanique mais le taux de matching obtenu, donc la part de la base réellement adressable.</li></ul></div>
+      
+<h2 id="definition-de-la-resolution-d-identite">Définition de la résolution d'identité</h2>
+<p>Techniquement, la résolution d'identité est le processus qui rapproche des identifiants disparates (adresses e-mail, numéros de téléphone, identifiants de compte, cookies, identifiants publicitaires mobiles, numéros de carte de fidélité) pour déterminer lesquels appartiennent à une même personne ou à un même foyer. Le résultat n'est pas une simple liste de correspondances : c'est un profil unifié, souvent appelé <strong>identité persistante</strong>, auquel se rattachent l'ensemble des interactions et des attributs connus.</p>
+<p>Cette discipline se distingue de la simple déduplication d'une base de données. Elle ne se contente pas de repérer deux lignes identiques dans un fichier : elle relie des données de nature différente, issues de canaux et de systèmes qui n'ont, au départ, aucune clé commune. C'est cette capacité à faire le pont entre des univers séparés qui en fait un socle des architectures de données modernes.</p>
+
+<h2 id="pourquoi-la-resolution-d-identite-est-devenue-centrale">Pourquoi la résolution d'identité est devenue centrale</h2>
+<p>Deux dynamiques expliquent l'importance croissante de ce sujet. La première est la fragmentation des parcours. Un client interagit aujourd'hui avec une enseigne sur un nombre grandissant de surfaces : site web, application mobile, e-mail, réseaux sociaux, service client, et point de vente physique. Chaque surface produit ses propres identifiants, et la multiplication des appareils par personne amplifie encore la dispersion.</p>
+<p>La seconde dynamique est la disparition progressive des repères techniques traditionnels. La fin annoncée des cookies tiers, les restrictions sur les identifiants publicitaires mobiles et le renforcement des protections de la vie privée réduisent la fiabilité des méthodes de suivi anonymes. Dans ce contexte dit <strong>cookieless</strong>, les marques se tournent vers des données déclarées et consenties (first-party data) qu'il faut, précisément, savoir réconcilier. La résolution d'identité devient alors la brique qui donne de la valeur à ces données propriétaires.</p>
+<ul>
+<li>Multiplication des points de contact et des appareils par individu.</li>
+<li>Recul des cookies tiers et des identifiants publicitaires stables.</li>
+<li>Montée en puissance des données propriétaires collectées avec consentement.</li>
+<li>Attente d'expériences cohérentes d'un canal à l'autre.</li>
+</ul>
+
+<h2 id="comment-fonctionne-la-resolution-d-identite">Comment fonctionne la résolution d'identité</h2>
+<p>Le mécanisme repose sur trois éléments : des identifiants, une logique de rapprochement (matching), et une structure qui mémorise les liens établis.</p>
+<h3>Les identifiants</h3>
+<p>On distingue les identifiants dits durables (e-mail, téléphone, identifiant de compte, carte de fidélité), relativement stables dans le temps, des identifiants volatils (cookies, identifiants d'appareil), qui changent souvent. Les premiers servent d'ancres fiables, les seconds apportent de la couverture sur les canaux anonymes.</p>
+<h3>Matching déterministe et probabiliste</h3>
+<p>Le rapprochement s'appuie sur deux grandes approches, souvent combinées.</p>
+<table>
+<thead>
+<tr><th>Critère</th><th>Matching déterministe</th><th>Matching probabiliste</th></tr>
+</thead>
+<tbody>
+<tr><td>Principe</td><td>Correspondance exacte sur un identifiant partagé (e-mail, téléphone)</td><td>Estimation statistique à partir de signaux (appareil, adresse IP, comportement)</td></tr>
+<tr><td>Fiabilité</td><td>Élevée, lien certain</td><td>Variable, exprimée par un score de confiance</td></tr>
+<tr><td>Couverture</td><td>Limitée aux personnes identifiées</td><td>Plus large, y compris sur canaux anonymes</td></tr>
+<tr><td>Usage typique</td><td>Réconcilier CRM, fidélité, comptes clients</td><td>Étendre la vue aux parcours non connectés</td></tr>
+</tbody>
+</table>
+<h3>Le graphe d'identités</h3>
+<p>Les liens validés sont consignés dans une structure appelée <strong>graphe d'identités</strong> (identity graph, ou ID graph). Ce graphe cartographie les relations entre tous les identifiants rattachés à une même personne ou à un même foyer. Il n'est jamais figé : il se met à jour à mesure que de nouveaux signaux arrivent, que des identifiants expirent, ou que des correspondances se confirment. C'est le référentiel vivant qui alimente ensuite les usages marketing et analytiques.</p>
+
+<h2 id="de-la-resolution-d-identite-a-la-vue-client-unifiee">De la résolution d'identité à la vue client unifiée</h2>
+<p>Relier des identifiants n'a d'intérêt que par ce que cela permet de construire : une <strong>vue client unifiée</strong>. Une fois les fragments réconciliés, l'ensemble des interactions, des transactions et des préférences d'une personne se rattache à un seul profil de référence. Ce profil devient la base d'une connaissance client cohérente, exploitable aussi bien pour la personnalisation que pour la mesure.</p>
+<p>Concrètement, la vue unifiée répond à des questions simples mais longtemps hors de portée : ce visiteur web est-il déjà client en point de vente, ce détenteur de carte de fidélité a-t-il ouvert la dernière campagne e-mail, ce parcours d'achat a-t-il commencé en ligne pour se conclure en boutique. La résolution d'identité est le préalable technique à ces réponses.</p>
+
+<h2 id="l-application-au-retail-reconcilier-en-ligne-et-point-de-ven">L'application au retail : réconcilier en ligne et point de vente</h2>
+<p>Le commerce de détail est sans doute le terrain où l'enjeu est le plus concret, parce que le parcours d'achat y traverse en permanence la frontière entre numérique et physique. Un même client peut naviguer sur le site, comparer en application, recevoir une offre par e-mail, puis acheter en caisse. La résolution d'identité permet de raccorder ces épisodes pour reconstituer un parcours réel plutôt qu'une succession d'événements isolés.</p>
+<ul>
+<li><strong>Web et application</strong> : relier les sessions de navigation aux comptes connectés et aux paniers.</li>
+<li><strong>Magasin</strong> : rattacher les achats en point de vente au profil, souvent via la carte de fidélité ou le ticket dématérialisé.</li>
+<li><strong>CRM et fidélité</strong> : consolider l'historique transactionnel et relationnel autour d'une identité unique.</li>
+<li><strong>Marketing</strong> : mesurer l'effet des campagnes en ligne sur les ventes en point de vente, et inversement.</li>
+</ul>
+<p>Cette réconciliation ouvre la voie à une mesure du parcours online-to-store, longtemps considérée comme un angle mort. Elle permet aussi d'éviter les incohérences visibles pour le client, comme une relance sur un produit déjà acheté en boutique.</p>
+
+<h2 id="conformite-rgpd-et-pseudonymisation">Conformité RGPD et pseudonymisation</h2>
+<p>Réconcilier des identités implique de traiter des données à caractère personnel, ce qui place la résolution d'identité sous le régime du RGPD. La démarche doit reposer sur une base légale claire, un consentement recueilli lorsqu'il est requis, et le respect des principes de minimisation et de finalité. Les personnes conservent leurs droits d'accès, de rectification et d'opposition sur le profil ainsi constitué.</p>
+<p>La <strong>pseudonymisation</strong> est un levier central de mise en conformité. Plutôt que de manipuler directement des identifiants en clair, les systèmes remplacent les données sensibles par des clés techniques irréversibles côté usage, ce qui réduit le risque en cas d'exposition tout en préservant la capacité de rapprochement. La sécurité, la traçabilité des consentements et la limitation de la durée de conservation complètent ce cadre.</p>
+
+<h2 id="mesurer-la-performance-le-taux-de-matching">Mesurer la performance : le taux de matching</h2>
+<p>La qualité d'un dispositif de résolution d'identité se pilote avec des indicateurs. Le principal est le <strong>taux de matching</strong>, c'est-à-dire la part des identifiants ou des interactions effectivement rattachés à un profil connu. Un taux élevé traduit une bonne couverture et une base de données mieux valorisée, mais il doit se lire en regard de la précision, pour éviter les rapprochements erronés.</p>
+<ul>
+<li><strong>Taux de matching</strong> : proportion d'interactions réconciliées à une identité.</li>
+<li><strong>Précision</strong> : fiabilité des liens établis, faible taux de faux positifs.</li>
+<li><strong>Couverture cross-canal</strong> : capacité à relier plusieurs canaux pour un même profil.</li>
+<li><strong>Fraîcheur du graphe</strong> : rapidité de mise à jour des liens.</li>
+</ul>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>La résolution d'identité est le socle discret sur lequel repose toute connaissance client cohérente à l'ère cookieless. En reliant les identifiants dispersés pour construire une vue unifiée, elle transforme des signaux épars en un profil exploitable, dans le respect du cadre réglementaire. Sa valeur dépend directement de la richesse et de la qualité de la donnée propriétaire dont dispose une organisation : plus cette donnée est étendue et fiable, plus le graphe d'identités qui en résulte est robuste et actionnable.</p>
+
+      <div class="faq"><h2 id="faq">Questions fréquentes</h2><div class="q"><h3>Que signifie résolution d&#x27;identité ?</h3><p>C'est le processus qui rapproche des identifiants épars (email, téléphone, carte de fidélité, compte web, identifiant mobile) pour reconstituer un individu unique, puis maintenir ce rattachement dans le temps.</p></div><div class="q"><h3>Pourquoi est-ce indispensable à une vue client unifiée ?</h3><p>Parce qu'une vue client n'a de sens que si chaque ligne correspond à une personne réelle. Tant que les identifiants ne convergent pas, la base compte des doublons, la pression commerciale est mal calibrée et la mesure est faussée.</p></div><div class="q"><h3>Comment mesure-t-on la qualité d&#x27;une résolution d&#x27;identité ?</h3><p>Par le taux de matching, c'est-à-dire la part des enregistrements effectivement rattachés à une identité, et par le taux d'erreur de rapprochement. Les deux se lisent ensemble : un taux élevé obtenu au prix de faux rapprochements n'a pas de valeur.</p></div><div class="q"><h3>Est-ce compatible avec le RGPD ?</h3><p>Oui, sous conditions : base légale, information des personnes, minimisation et, le plus souvent, pseudonymisation des identifiants utilisés pour le rapprochement. La traçabilité des opérations fait partie du dispositif.</p></div></div>
+      <div class="sources"><h4>Sources à consulter</h4><ul><li>CDP Institute, travaux de référence sur l'identity resolution et l'unification de la donnée client.</li><li>CNIL, cadre applicable aux identifiants et à la pseudonymisation.</li><li>IAB Tech Lab, spécifications sur les identifiants publicitaires et leur cycle de vie.</li></ul></div>
+      <div class="cta-band">
+  <h3>Découvrez le potentiel réel de votre base</h3>
+  <p>Un POC Data Discovery en 3 étapes : on connecte, on analyse, on vous restitue le potentiel d'activation chiffré. Les résultats de l'analyse restent votre propriété.</p>
+  <a class="b" href="https://alexgarnier-cloud.github.io/boost/#lp-demo">Organiser un POC Data Discovery</a>
+</div>
+      <div class="next"><a href="https://alexgarnier-cloud.github.io/boost/blog/matching-deterministe-vs-probabiliste/"><div class="t">À lire aussi</div><div class="h">Matching déterministe ou probabiliste : quelles différences ?</div></a><a href="https://alexgarnier-cloud.github.io/boost/blog/cdp-definition/"><div class="t">À lire aussi</div><div class="h">Qu&#x27;est-ce qu&#x27;une CDP (Customer Data Platform) ?</div></a></div>
+    </div>
+    <aside class="rail">
+      <h4>Sommaire</h4>
+      <ol><li><a href="#definition-de-la-resolution-d-identite">Définition de la résolution d'identité</a></li><li><a href="#pourquoi-la-resolution-d-identite-est-devenue-centrale">Pourquoi la résolution d'identité est devenue centrale</a></li><li><a href="#comment-fonctionne-la-resolution-d-identite">Comment fonctionne la résolution d'identité</a></li><li><a href="#de-la-resolution-d-identite-a-la-vue-client-unifiee">De la résolution d'identité à la vue client unifiée</a></li><li><a href="#l-application-au-retail-reconcilier-en-ligne-et-point-de-ven">L'application au retail : réconcilier en ligne et point de vente</a></li><li><a href="#conformite-rgpd-et-pseudonymisation">Conformité RGPD et pseudonymisation</a></li><li><a href="#mesurer-la-performance-le-taux-de-matching">Mesurer la performance : le taux de matching</a></li><li><a href="#conclusion">Conclusion</a></li></ol>
+      <div class="box"><span class="b">POC Data Discovery</span>
+        <p>Connectez, enrichissez, activez avec certitude. On vous restitue le potentiel d'activation chiffré de votre base.</p>
+        <a class="cta" href="https://alexgarnier-cloud.github.io/boost/#lp-demo">Organiser un POC</a></div>
+    </aside>
+  </div>
+</div>
+<footer class="bf"><div class="bf-in">
+  <div>Boost Platform · le socle d'identité et de data propriétaire du retail et du local</div>
+  <div><a href="https://alexgarnier-cloud.github.io/boost/">Accueil</a> · <a href="https://alexgarnier-cloud.github.io/boost/blog/">Blog</a></div>
+</div><div class="bf-in" style="margin-top:14px;font-size:13px"><a href="https://alexgarnier-cloud.github.io/boost/blog/drive-to-store/">Drive-to-store &amp; mesure</a> · <a href="https://alexgarnier-cloud.github.io/boost/blog/identite-client/">Identité client &amp; data</a> · <a href="https://alexgarnier-cloud.github.io/boost/blog/data-discovery/">Data Discovery</a> · <a href="https://alexgarnier-cloud.github.io/boost/blog/marketing-local/">Marketing local &amp; zones de chalandise</a> · <a href="https://alexgarnier-cloud.github.io/boost/blog/retail-media/">Retail media &amp; activation</a> · <a href="https://alexgarnier-cloud.github.io/boost/blog/conformite/">Conformité &amp; gouvernance</a> · <a href="https://alexgarnier-cloud.github.io/boost/blog/etudes/">Études &amp; baromètres</a></div></footer></body></html>

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Qu&#x27;est-ce qu&#x27;une data clean room ? Définition et fonctionnement</title>
+<meta name="description" content="Définition, architecture et garanties de confidentialité d&#x27;une data clean room, et ce qu&#x27;elle change concrètement pour une enseigne qui veut croiser ses données avec celles d&#x27;un partenaire.">
+<link rel="canonical" href="https://alexgarnier-cloud.github.io/boost/blog/data-clean-room-definition/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Qu&#x27;est-ce qu&#x27;une data clean room ? Définition et fonctionnement">
+<meta property="og:description" content="Définition, architecture et garanties de confidentialité d&#x27;une data clean room, et ce qu&#x27;elle change concrètement pour une enseigne qui veut croiser ses données avec celles d&#x27;un partenaire.">
+<meta property="og:url" content="https://alexgarnier-cloud.github.io/boost/blog/data-clean-room-definition/">
+<meta property="og:site_name" content="Boost Platform">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Qu&#x27;est-ce qu&#x27;une data clean room ? Définition et fonctionnement">
+<meta name="twitter:description" content="Définition, architecture et garanties de confidentialité d&#x27;une data clean room, et ce qu&#x27;elle change concrètement pour une enseigne qui veut croiser ses données avec celles d&#x27;un partenaire.">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/blog.css?v=4">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Qu'est-ce qu'une data clean room ?", "description": "Définition, architecture et garanties de confidentialité d'une data clean room, et ce qu'elle change concrètement pour une enseigne qui veut croiser ses données avec celles d'un partenaire.", "inLanguage": "fr-FR", "datePublished": "2026-07-25", "dateModified": "2026-07-25", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://alexgarnier-cloud.github.io/boost/blog/data-clean-room-definition/"}, "author": {"@type": "Organization", "name": "Boost Platform"}, "publisher": {"@type": "Organization", "name": "Boost Platform"}, "articleSection": "Data Discovery"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Blog", "item": "https://alexgarnier-cloud.github.io/boost/blog/"}, {"@type": "ListItem", "position": 2, "name": "Data Discovery", "item": "https://alexgarnier-cloud.github.io/boost/blog/data-discovery/"}, {"@type": "ListItem", "position": 3, "name": "Qu'est-ce qu'une data clean room ?", "item": "https://alexgarnier-cloud.github.io/boost/blog/data-clean-room-definition/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "À quoi sert une data clean room ?", "acceptedAnswer": {"@type": "Answer", "text": "À faire travailler ensemble deux jeux de données appartenant à des acteurs différents, sans que l'un puisse lire les données de l'autre. Elle sert principalement à mesurer une campagne, à construire une audience commune et à analyser un recoupement de clientèle."}}, {"@type": "Question", "name": "Une data clean room est-elle conforme au RGPD ?", "acceptedAnswer": {"@type": "Answer", "text": "Elle facilite la conformité mais ne la garantit pas à elle seule. Il faut toujours une base légale, une information des personnes et un cadre contractuel entre les parties. La clean room réduit le risque en évitant le transfert de données brutes et en ne restituant que des résultats agrégés."}}, {"@type": "Question", "name": "Quelle différence avec un simple échange de fichiers ?", "acceptedAnswer": {"@type": "Answer", "text": "Dans un échange de fichiers, chaque partie récupère les données de l'autre et en garde une copie. Dans une clean room, personne ne récupère rien : le calcul a lieu dans l'environnement cloisonné et seul le résultat sort, sous des règles définies à l'avance."}}, {"@type": "Question", "name": "Faut-il un gros volume de données pour que ce soit utile ?", "acceptedAnswer": {"@type": "Answer", "text": "Il faut surtout un recoupement suffisant entre les deux bases pour que les résultats soient statistiquement exploitables, et des règles de seuil minimum qui empêchent de réidentifier une personne dans un résultat agrégé."}}]}</script>
+</head>
+<body>
+<header class="bh"><div class="bh-in">
+  <a class="bh-logo" href="../"><img src="../../assets/bp-logo.png" alt="Boost Platform" width="900" height="103"></a>
+  <nav class="bh-nav"><a href="../../">Accueil</a><a href="../drive-to-store/">Drive-to-store</a><a href="../identite-client/">Identité client</a><a href="../data-discovery/" class="on">Data Discovery</a><a href="../marketing-local/">Marketing local</a><a href="../retail-media/">Retail media</a><a href="../conformite/">Conformité</a><a href="../etudes/">Études</a></nav>
+  <a class="bh-cta" href="https://alexgarnier-cloud.github.io/boost/#lp-demo">Demander une démo</a>
+</div></header>
+<div class="wrap">
+  <div class="mast" style="padding-bottom:26px">
+    <div class="kick">Data collaboration</div>
+    <h1>Qu&#x27;est-ce qu&#x27;une data clean room ?</h1>
+    <p class="lede">Une data clean room est un environnement technique sécurisé et neutre dans lequel plusieurs parties peuvent rapprocher leurs données pour en tirer des enseignements communs, sans jamais s'échanger ni exposer leurs données brutes. Concrètement, chaque partenaire dépose ses données dans un espace cloisonné où seules des opérations autorisées (jointures, agrégations, comptages) sont permises, et où les résultats en sortie sont agrégés et anonymisés. Pour le retail, ce dispositif est devenu central : il permet à une enseigne et à une marque, ou à un média et à un annonceur, de collaborer sur leurs audiences et de mesurer des campagnes tout en respectant le RGPD et la disparition programmée des cookies tiers.</p>
+  </div>
+  <div class="art">
+    <div class="art-body">
+      <div class="byline"><span>Boost Platform</span><span class="dot"></span><span>2026-07-25</span><span class="dot"></span><span>5 min de lecture</span><span class="dot"></span><a href="https://alexgarnier-cloud.github.io/boost/blog/data-discovery/">Data Discovery</a></div>
+      <div class="tldr"><span class="b">L'essentiel</span><ul><li>Une data clean room est un environnement neutre et cloisonné où deux acteurs croisent leurs données sans qu'aucun des deux n'accède aux données brutes de l'autre.</li><li>Seuls des résultats agrégés en sortent : audiences, recoupements, mesures. Les identifiants individuels restent dans leur périmètre d'origine.</li><li>C'est la réponse technique à une contrainte à la fois juridique et concurrentielle : collaborer sans transférer de fichier client.</li><li>En retail, l'usage principal est le rapprochement d'une base enseigne avec une base marque ou média, pour cibler et pour mesurer l'effet réel d'une campagne.</li></ul></div>
+      
+<h2 id="definition-d-une-data-clean-room">Définition d'une data clean room</h2>
+<p>Le terme désigne à la fois une technologie et un cadre contractuel. Techniquement, une <strong>data clean room</strong> est une couche logicielle qui héberge les données de plusieurs organisations dans des compartiments isolés et qui contrôle très strictement ce que chaque partie peut faire des données de l'autre. Personne ne télécharge, ne copie ni ne consulte les enregistrements individuels du partenaire. On ne manipule que des résultats calculés sur l'intersection des jeux de données, par exemple le nombre de clients communs, le chiffre d'affaires généré par une audience exposée à une campagne, ou la structure démographique d'un segment.</p>
+<p>L'analogie la plus parlante est celle d'une salle blanche en laboratoire : un espace contrôlé où l'on peut travailler ensemble sur une matière sensible, avec des règles d'entrée et de sortie précises, sans contamination croisée. La finalité est de concilier deux impératifs habituellement opposés : collaborer sur la donnée et protéger sa confidentialité.</p>
+
+<h2 id="comment-fonctionne-une-data-clean-room">Comment fonctionne une data clean room</h2>
+<p>Le principe repose sur le rapprochement de données sans exposition. Chaque partie apporte un identifiant commun, souvent une adresse email ou un numéro de téléphone préalablement transformé (haché), qui sert de clé de rapprochement. Le déroulé type suit quatre étapes.</p>
+<ul>
+<li><strong>Ingestion :</strong> chaque partenaire charge ses données dans un compartiment qui lui reste propre et sur lequel l'autre n'a aucun droit de lecture directe.</li>
+<li><strong>Rapprochement :</strong> les identifiants sont mis en correspondance de façon chiffrée pour établir l'intersection des deux bases (les individus communs), sans révéler la liste nominative à qui que ce soit.</li>
+<li><strong>Traitement :</strong> seules des requêtes validées et encadrées peuvent s'exécuter, avec des seuils minimaux d'agrégation qui interdisent d'isoler une personne.</li>
+<li><strong>Restitution :</strong> les résultats sortent sous forme agrégée (indicateurs, segments, mesures), jamais sous forme d'enregistrements individuels réidentifiables.</li>
+</ul>
+<p>Ce fonctionnement change la logique habituelle du partage de fichiers. On n'envoie plus une base à un tiers en espérant qu'il en fasse bon usage : la donnée reste chez soi, et c'est le calcul qui vient à elle, dans un cadre où chaque opération est journalisée.</p>
+
+<h2 id="l-architecture-type-et-les-technologies-de-confidentialite">L'architecture type et les technologies de confidentialité</h2>
+<p>Une data clean room combine plusieurs briques pour garantir que la collaboration ne se transforme jamais en fuite de données. Ces briques relèvent des <strong>PET</strong> (privacy enhancing technologies), un ensemble de techniques dont l'objectif est de rendre l'analyse possible sans divulgation.</p>
+<h3>Les principales PET mobilisées</h3>
+<ul>
+<li><strong>Le hachage et la pseudonymisation :</strong> les identifiants directs sont transformés en empreintes irréversibles avant tout rapprochement.</li>
+<li><strong>La confidentialité différentielle :</strong> l'ajout d'un bruit statistique maîtrisé empêche de déduire la présence d'un individu précis dans un résultat.</li>
+<li><strong>Le calcul multipartite sécurisé :</strong> plusieurs parties calculent un résultat commun sans qu'aucune n'accède aux données des autres.</li>
+<li><strong>Les seuils d'agrégation minimaux (k-anonymat) :</strong> aucun résultat n'est restitué s'il porte sur un nombre d'individus inférieur à un seuil, ce qui bloque la réidentification.</li>
+<li><strong>Le contrôle des requêtes et la traçabilité :</strong> chaque opération autorisée est prédéfinie, journalisée et auditable.</li>
+</ul>
+<p>À cela s'ajoutent la gouvernance et le cadre contractuel : définition des finalités, durée de conservation, liste des requêtes permises, gestion des consentements. La technologie ne remplace pas le droit, elle l'outille.</p>
+
+<h2 id="les-types-de-data-clean-rooms">Les types de data clean rooms</h2>
+<p>Toutes les clean rooms ne se ressemblent pas. On distingue schématiquement trois familles, selon l'opérateur et le degré de neutralité.</p>
+<table>
+<thead>
+<tr><th>Type</th><th>Opérateur</th><th>Usage principal</th><th>Point d'attention</th></tr>
+</thead>
+<tbody>
+<tr><td>Walled garden</td><td>Grande plateforme média</td><td>Mesure des campagnes sur son propre inventaire</td><td>Périmètre fermé, données non exportables</td></tr>
+<tr><td>Neutre (indépendante)</td><td>Éditeur technologique tiers</td><td>Collaboration entre plusieurs partenaires</td><td>Neutralité et interopérabilité à vérifier</td></tr>
+<tr><td>Propriétaire (first party)</td><td>Une enseigne ou un groupe</td><td>Ouvrir sa donnée client à ses partenaires marques</td><td>Qualité et volume de la donnée propriétaire</td></tr>
+</tbody>
+</table>
+<p>Dans le retail, les trois coexistent : une enseigne peut exploiter une clean room propriétaire pour valoriser sa donnée client auprès des marques, tout en utilisant les clean rooms des grandes plateformes pour mesurer ses achats média.</p>
+
+<h2 id="les-cas-d-usage-dans-le-retail">Les cas d'usage dans le retail</h2>
+<p>Le retail est l'un des terrains les plus fertiles pour ces dispositifs, parce qu'il repose sur des relations denses entre enseignes, marques et régies média.</p>
+<h3>Collaboration marque et enseigne</h3>
+<p>Une marque de grande consommation et l'enseigne qui distribue ses produits peuvent croiser leurs bases pour comprendre qui achète, à quelle fréquence, et comment une campagne influence les ventes en point de vente, sans que l'enseigne ne cède son fichier client ni que la marque n'expose ses données CRM.</p>
+<h3>Retail media</h3>
+<p>Les régies retail media s'appuient sur des clean rooms pour construire des audiences à partir des données d'achat, activer des campagnes ciblées et prouver leur efficacité aux annonceurs, dans un cadre respectueux de la vie privée.</p>
+<h3>Mesure et attribution</h3>
+<p>La clean room permet de relier une exposition publicitaire à un acte d'achat, y compris en point de vente physique, et donc de mesurer un effet online-to-store difficile à capter autrement depuis la fin des cookies tiers.</p>
+
+<h2 id="les-limites-et-points-d-attention">Les limites et points d'attention</h2>
+<p>La data clean room n'est ni une solution magique ni une simple case à cocher de conformité. Plusieurs facteurs conditionnent sa valeur.</p>
+<ul>
+<li><strong>La qualité du matching :</strong> le rapprochement dépend d'identifiants fiables et partagés ; un faible taux de correspondance limite mécaniquement les enseignements.</li>
+<li><strong>Le volume et la fraîcheur des données :</strong> sans donnée propriétaire riche et à jour, les résultats restent fragiles.</li>
+<li><strong>La complexité technique et les coûts :</strong> l'intégration, la gouvernance et l'expertise nécessaires ne sont pas neutres.</li>
+<li><strong>La neutralité de l'opérateur :</strong> une clean room adossée à un acteur qui a intérêt aux résultats pose une question de confiance.</li>
+<li><strong>Le cadre juridique :</strong> pseudonymisation, consentement et finalités doivent être documentés, car la technologie n'exonère pas des obligations RGPD.</li>
+</ul>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>La data clean room répond à une équation devenue structurante pour le retail : collaborer sur la donnée client tout en garantissant sa confidentialité, dans un monde sans cookies tiers. Elle déplace le partage vers le calcul, protège chaque partie et rend possibles des mesures autrefois inaccessibles. Sa valeur réelle dépend toutefois d'un prérequis simple : la richesse de la donnée propriétaire que l'on y apporte et la capacité à relier durablement l'exposition média à l'acte d'achat, en ligne comme en point de vente. C'est à cette condition que le rapprochement de données devient un levier de mesure fiable, et pas seulement une promesse technique.</p>
+
+      <div class="faq"><h2 id="faq">Questions fréquentes</h2><div class="q"><h3>À quoi sert une data clean room ?</h3><p>À faire travailler ensemble deux jeux de données appartenant à des acteurs différents, sans que l'un puisse lire les données de l'autre. Elle sert principalement à mesurer une campagne, à construire une audience commune et à analyser un recoupement de clientèle.</p></div><div class="q"><h3>Une data clean room est-elle conforme au RGPD ?</h3><p>Elle facilite la conformité mais ne la garantit pas à elle seule. Il faut toujours une base légale, une information des personnes et un cadre contractuel entre les parties. La clean room réduit le risque en évitant le transfert de données brutes et en ne restituant que des résultats agrégés.</p></div><div class="q"><h3>Quelle différence avec un simple échange de fichiers ?</h3><p>Dans un échange de fichiers, chaque partie récupère les données de l'autre et en garde une copie. Dans une clean room, personne ne récupère rien : le calcul a lieu dans l'environnement cloisonné et seul le résultat sort, sous des règles définies à l'avance.</p></div><div class="q"><h3>Faut-il un gros volume de données pour que ce soit utile ?</h3><p>Il faut surtout un recoupement suffisant entre les deux bases pour que les résultats soient statistiquement exploitables, et des règles de seuil minimum qui empêchent de réidentifier une personne dans un résultat agrégé.</p></div></div>
+      <div class="sources"><h4>Sources à consulter</h4><ul><li>CNIL, doctrine sur le partage de données et les traitements de mesure d'audience.</li><li>IAB Europe, travaux de référence sur les data clean rooms et les environnements de collaboration.</li><li>Alliance Digitale, cartographie des acteurs du e-retail et de la data en France.</li></ul></div>
+      <div class="cta-band">
+  <h3>Découvrez le potentiel réel de votre base</h3>
+  <p>Un POC Data Discovery en 3 étapes : on connecte, on analyse, on vous restitue le potentiel d'activation chiffré. Les résultats de l'analyse restent votre propriété.</p>
+  <a class="b" href="https://alexgarnier-cloud.github.io/boost/#lp-demo">Organiser un POC Data Discovery</a>
+</div>
+      <div class="next"><a href="https://alexgarnier-cloud.github.io/boost/blog/data-collaboration-retail/"><div class="t">À lire aussi</div><div class="h">Data collaboration : enjeux et cas d&#x27;usage dans le retail</div></a><a href="https://alexgarnier-cloud.github.io/boost/blog/resolution-identite-definition/"><div class="t">À lire aussi</div><div class="h">Qu&#x27;est-ce que la résolution d&#x27;identité ?</div></a></div>
+    </div>
+    <aside class="rail">
+      <h4>Sommaire</h4>
+      <ol><li><a href="#definition-d-une-data-clean-room">Définition d'une data clean room</a></li><li><a href="#comment-fonctionne-une-data-clean-room">Comment fonctionne une data clean room</a></li><li><a href="#l-architecture-type-et-les-technologies-de-confidentialite">L'architecture type et les technologies de confidentialité</a></li><li><a href="#les-types-de-data-clean-rooms">Les types de data clean rooms</a></li><li><a href="#les-cas-d-usage-dans-le-retail">Les cas d'usage dans le retail</a></li><li><a href="#les-limites-et-points-d-attention">Les limites et points d'attention</a></li><li><a href="#conclusion">Conclusion</a></li></ol>
+      <div class="box"><span class="b">POC Data Discovery</span>
+        <p>Connectez, enrichissez, activez avec certitude. On vous restitue le potentiel d'activation chiffré de votre base.</p>
+        <a class="cta" href="https://alexgarnier-cloud.github.io/boost/#lp-demo">Organiser un POC</a></div>
+    </aside>
+  </div>
+</div>
+<footer class="bf"><div class="bf-in">
+  <div>Boost Platform · le socle d'identité et de data propriétaire du retail et du local</div>
+  <div><a href="https://alexgarnier-cloud.github.io/boost/">Accueil</a> · <a href="https://alexgarnier-cloud.github.io/boost/blog/">Blog</a></div>
+</div><div class="bf-in" style="margin-top:14px;font-size:13px"><a href="https://alexgarnier-cloud.github.io/boost/blog/drive-to-store/">Drive-to-store &amp; mesure</a> · <a href="https://alexgarnier-cloud.github.io/boost/blog/identite-client/">Identité client &amp; data</a> · <a href="https://alexgarnier-cloud.github.io/boost/blog/data-discovery/">Data Discovery</a> · <a href="https://alexgarnier-cloud.github.io/boost/blog/marketing-local/">Marketing local &amp; zones de chalandise</a> · <a href="https://alexgarnier-cloud.github.io/boost/blog/retail-media/">Retail media &amp; activation</a> · <a href="https://alexgarnier-cloud.github.io/boost/blog/conformite/">Conformité &amp; gouvernance</a> · <a href="https://alexgarnier-cloud.github.io/boost/blog/etudes/">Études &amp; baromètres</a></div></footer></body></html>

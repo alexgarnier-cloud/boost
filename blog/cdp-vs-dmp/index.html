@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CDP ou DMP : quelles différences et laquelle choisir ?</title>
+<meta name="description" content="Comparatif CDP et DMP sur la nature des données, la durée de vie, la gestion de l&#x27;identité et les usages, avec une grille de décision orientée retail et marketing local.">
+<link rel="canonical" href="https://alexgarnier-cloud.github.io/boost/blog/cdp-vs-dmp/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CDP ou DMP : quelles différences et laquelle choisir ?">
+<meta property="og:description" content="Comparatif CDP et DMP sur la nature des données, la durée de vie, la gestion de l&#x27;identité et les usages, avec une grille de décision orientée retail et marketing local.">
+<meta property="og:url" content="https://alexgarnier-cloud.github.io/boost/blog/cdp-vs-dmp/">
+<meta property="og:site_name" content="Boost Platform">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CDP ou DMP : quelles différences et laquelle choisir ?">
+<meta name="twitter:description" content="Comparatif CDP et DMP sur la nature des données, la durée de vie, la gestion de l&#x27;identité et les usages, avec une grille de décision orientée retail et marketing local.">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/blog.css?v=4">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "CDP ou DMP : quelles différences, et laquelle choisir", "description": "Comparatif CDP et DMP sur la nature des données, la durée de vie, la gestion de l'identité et les usages, avec une grille de décision orientée retail et marketing local.", "inLanguage": "fr-FR", "datePublished": "2026-07-25", "dateModified": "2026-07-25", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://alexgarnier-cloud.github.io/boost/blog/cdp-vs-dmp/"}, "author": {"@type": "Organization", "name": "Boost Platform"}, "publisher": {"@type": "Organization", "name": "Boost Platform"}, "articleSection": "Identité client & data"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Blog", "item": "https://alexgarnier-cloud.github.io/boost/blog/"}, {"@type": "ListItem", "position": 2, "name": "Identité client & data", "item": "https://alexgarnier-cloud.github.io/boost/blog/identite-client/"}, {"@type": "ListItem", "position": 3, "name": "CDP ou DMP : quelles différences, et laquelle choisir", "item": "https://alexgarnier-cloud.github.io/boost/blog/cdp-vs-dmp/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Quelle est la différence principale entre CDP et DMP ?", "acceptedAnswer": {"@type": "Answer", "text": "La nature des données. La CDP unifie de la donnée propriétaire identifiée et la conserve durablement ; la DMP agrégeait de la donnée tierce anonyme à durée de vie courte, destinée à l'achat média."}}, {"@type": "Question", "name": "La DMP est-elle morte ?", "acceptedAnswer": {"@type": "Answer", "text": "Le modèle historique adossé aux cookies tiers s'éteint. La fonction d'extension d'audience subsiste, mais elle s'appuie désormais sur de la donnée propriétaire et sur des environnements de collaboration encadrés."}}, {"@type": "Question", "name": "Faut-il les deux ?", "acceptedAnswer": {"@type": "Answer", "text": "Rarement. La plupart des organisations ont besoin d'un socle unifié de donnée propriétaire, puis d'une capacité d'extension d'audience. Le second besoin ne justifie plus un outil séparé dans la majorité des cas."}}, {"@type": "Question", "name": "Par quoi commencer quand on n'a ni l'un ni l'autre ?", "acceptedAnswer": {"@type": "Answer", "text": "Par l'inventaire des sources internes et la mesure du taux d'identification actuel du chiffre d'affaires. Ce diagnostic détermine l'ampleur réelle du chantier, avant tout choix d'outil."}}]}</script>
+</head>
+<body>
+<header class="bh"><div class="bh-in">
+  <a class="bh-logo" href="../"><img src="../../assets/bp-logo.png" alt="Boost Platform" width="900" height="103"></a>
+  <nav class="bh-nav"><a href="../../">Accueil</a><a href="../drive-to-store/">Drive-to-store</a><a href="../identite-client/" class="on">Identité client</a><a href="../data-discovery/">Data Discovery</a><a href="../marketing-local/">Marketing local</a><a href="../retail-media/">Retail media</a><a href="../conformite/">Conformité</a><a href="../etudes/">Études</a></nav>
+  <a class="bh-cta" href="https://alexgarnier-cloud.github.io/boost/#lp-demo">Demander une démo</a>
+</div></header>
+<div class="wrap">
+  <div class="mast" style="padding-bottom:26px">
+    <div class="kick">CDP</div>
+    <h1>CDP ou DMP : quelles différences, et laquelle choisir</h1>
+    <p class="lede">La question cdp vs dmp revient dès qu'une entreprise cherche à unifier ses données clients pour mieux piloter son marketing. Les deux acronymes désignent des plateformes de gestion de données, mais elles ne collectent pas les mêmes informations, ne les conservent pas de la même façon et ne servent pas les mêmes objectifs. Comprendre ces différences est devenu déterminant, en particulier depuis que la disparition progressive des cookies tiers rebat les cartes de la publicité en ligne. Ce comparatif détaille la nature des données, la durée de vie, la gestion de l'identité et les usages de chaque outil, puis propose une grille de décision selon le contexte, avec un focus sur le retail et le marketing local.</p>
+  </div>
+  <div class="art">
+    <div class="art-body">
+      <div class="byline"><span>Boost Platform</span><span class="dot"></span><span>2026-07-25</span><span class="dot"></span><span>5 min de lecture</span><span class="dot"></span><a href="https://alexgarnier-cloud.github.io/boost/blog/identite-client/">Identité client &amp; data</a></div>
+      <div class="tldr"><span class="b">L'essentiel</span><ul><li>La CDP travaille la donnée propriétaire et identifiée, conservée dans la durée. La DMP travaillait surtout de la donnée tierce anonyme, à durée de vie courte.</li><li>La différence n'est pas technique mais stratégique : la première construit un actif, la seconde louait une audience.</li><li>Le déclin de la DMP s'explique par la fin des cookies tiers et par l'exigence de consentement, qui rendent la donnée tierce à la fois moins disponible et moins fiable.</li><li>Pour un réseau de points de vente, la question ne se pose plus vraiment : la CDP est le socle, la logique DMP survit comme brique d'extension d'audience.</li></ul></div>
+      
+<h2 id="qu-est-ce-qu-une-cdp">Qu'est-ce qu'une CDP ?</h2>
+<p>Une CDP (Customer Data Platform) est une plateforme qui centralise les données <strong>first-party</strong>, c'est-à-dire les données collectées directement par la marque auprès de ses propres clients. Elle agrège les informations issues du site web, de l'application mobile, du CRM, des tickets de caisse, du programme de fidélité ou encore du service client. Son rôle est de réconcilier toutes ces sources autour d'un identifiant unique afin de construire une <strong>vue client unifiée</strong> et persistante.</p>
+<p>La CDP travaille sur des données nominatives (email, numéro de téléphone, identifiant de fidélité). Elle conserve l'historique dans la durée, ce qui permet d'analyser un parcours d'achat complet, de segmenter finement et d'activer des scénarios relationnels personnalisés. Elle est pensée pour les équipes marketing, qui peuvent l'exploiter sans dépendre en permanence d'un service technique.</p>
+
+<h2 id="qu-est-ce-qu-une-dmp">Qu'est-ce qu'une DMP ?</h2>
+<p>Une DMP (Data Management Platform) a été conçue à l'origine pour la publicité display et l'achat média programmatique. Elle repose principalement sur des données <strong>third-party</strong> (tierces) et sur des signaux <strong>anonymes</strong>, rattachés à des cookies ou à des identifiants publicitaires plutôt qu'à des personnes identifiées.</p>
+<p>La DMP agrège de larges volumes d'audiences pour construire des segments à des fins de ciblage publicitaire, de reciblage et de recherche de profils similaires (lookalike). Sa logique est celle de l'audience de masse et du temps court : les cookies ont une durée de vie limitée, ce qui impose de reconstituer sans cesse les segments. La DMP ne cherche pas à connaître un individu dans la durée, mais à toucher le bon profil au bon moment pour une campagne donnée.</p>
+
+<h2 id="cdp-vs-dmp-les-differences-cles">CDP vs DMP : les différences clés</h2>
+<p>La distinction cdp vs dmp se joue sur plusieurs axes structurants. La CDP est centrée sur la donnée propriétaire et nominative, la DMP sur la donnée tierce et anonyme. La première nourrit la relation client dans la durée, la seconde sert l'acquisition média sur des cycles courts. Le tableau ci-dessous synthétise ces écarts.</p>
+
+<table>
+<thead>
+<tr>
+<th>Critère</th>
+<th>CDP</th>
+<th>DMP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Type de données</td>
+<td>First-party (propriétaires, collectées par la marque)</td>
+<td>Principalement third-party (tierces) et second-party</td>
+</tr>
+<tr>
+<td>Identité</td>
+<td>Données nominatives (PII : email, téléphone, ID fidélité)</td>
+<td>Identifiants anonymes (cookies, ID publicitaires)</td>
+</tr>
+<tr>
+<td>Durée de conservation</td>
+<td>Longue et persistante (historique client dans le temps)</td>
+<td>Courte (durée de vie des cookies, souvent quelques semaines)</td>
+</tr>
+<tr>
+<td>Usages principaux</td>
+<td>Vue client unifiée, segmentation, personnalisation, fidélisation, analytics</td>
+<td>Ciblage publicitaire, reciblage, extension d'audience</td>
+</tr>
+<tr>
+<td>Activation</td>
+<td>Multicanal : email, SMS, notifications, site, média, point de vente</td>
+<td>Principalement média display et programmatique</td>
+</tr>
+<tr>
+<td>Avenir cookieless</td>
+<td>Robuste : ne dépend pas des cookies tiers</td>
+<td>Fragilisé : modèle historiquement adossé aux cookies tiers</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="pourquoi-la-dmp-decline">Pourquoi la DMP décline</h2>
+<p>Le modèle de la DMP repose sur le cookie tiers, cette petite balise déposée par des acteurs autres que le site visité pour suivre les internautes de site en site. Or ce mécanisme s'éteint. Les navigateurs Safari et Firefox bloquent les cookies tiers depuis plusieurs années, et l'écosystème publicitaire s'oriente durablement vers un environnement <strong>cookieless</strong>. À cela s'ajoutent le renforcement du cadre réglementaire (RGPD, consentement explicite) et la montée des attentes des consommateurs en matière de vie privée.</p>
+<p>Résultat, la matière première de la DMP se raréfie. Les segments anonymes deviennent moins précis, moins durables et plus coûteux à maintenir. De nombreux acteurs ont d'ailleurs cessé de commercialiser leur DMP historique, tandis que l'attention se déplace vers les plateformes capables d'exploiter la donnée propriétaire consentie. La DMP ne disparaît pas totalement, mais son rôle se réduit et se recentre sur des usages média spécifiques.</p>
+
+<h2 id="l-application-au-retail-et-au-marketing-local">L'application au retail et au marketing local</h2>
+<p>Dans le commerce de détail, l'écart entre les deux approches est particulièrement visible. Un distributeur dispose d'un actif que peu d'acteurs digitaux possèdent : une <strong>relation directe et récurrente</strong> avec ses clients, en ligne comme en point de vente. Programmes de fidélité, tickets de caisse, comptes clients, application mobile, autant de sources first-party qui alimentent naturellement une CDP.</p>
+<p>La CDP permet au retailer de relier ces signaux pour reconstituer un parcours complet, souvent hybride entre le web et le point de vente. Elle rend possible plusieurs cas d'usage difficiles à adresser avec une logique DMP :</p>
+<ul>
+<li>Réconcilier un achat en point de vente avec une visite sur le site ou une campagne reçue par email.</li>
+<li>Segmenter selon la valeur réelle du client et son comportement d'achat, pas seulement selon un profil publicitaire probable.</li>
+<li>Personnaliser les communications relationnelles et les offres locales en fonction de l'historique et de la zone de chalandise.</li>
+<li>Mesurer l'effet des campagnes digitales sur la fréquentation et les ventes en points de vente (logique drive-to-store).</li>
+</ul>
+<p>Le marketing local ajoute une dimension géographique. La capacité à rattacher un client ou un prospect à une zone de chalandise, à un point de vente de proximité, suppose une donnée stable et identifiée que seule une approche propriétaire peut garantir dans la durée. C'est précisément le terrain sur lequel la logique DMP, anonyme et volatile, montre ses limites.</p>
+
+<h3>Faut-il choisir l'un ou l'autre ?</h3>
+<p>Les deux plateformes ne sont pas strictement interchangeables, car elles répondent à des besoins différents. Une DMP peut encore compléter un dispositif média pour élargir une audience en acquisition. Mais elle ne remplace pas la connaissance client dans la durée. Dans la plupart des organisations, la CDP devient le socle central, et le média vient s'y connecter plutôt que l'inverse.</p>
+
+<h2 id="cdp-ou-dmp-laquelle-choisir">CDP ou DMP : laquelle choisir ?</h2>
+<p>Le choix dépend de l'objectif prioritaire. Si le besoin est de toucher rapidement de larges audiences anonymes pour une campagne publicitaire ponctuelle, la logique DMP peut encore rendre service, à condition d'accepter sa dépendance déclinante aux cookies tiers. Mais si l'objectif est de connaître ses clients, de construire une relation durable, de personnaliser sur l'ensemble des canaux et de mesurer l'impact réel jusqu'en point de vente, la <strong>CDP s'impose</strong>.</p>
+<p>Dans un monde cookieless, la donnée propriétaire consentie devient l'actif le plus précieux d'une marque. Elle est stable, conforme au cadre réglementaire, rattachée à des personnes réelles et non à des identifiants éphémères. C'est ce qui explique que la CDP prenne le dessus : elle transforme la donnée first-party en avantage durable, là où la DMP dépendait d'une ressource en voie de disparition. Pour un acteur du retail et du marketing local, capitaliser sur cette donnée propriétaire, réconciliée autour d'une identité fiable, est le meilleur moyen de préparer l'après-cookie sans subir les ruptures de l'écosystème publicitaire.</p>
+
+      <div class="faq"><h2 id="faq">Questions fréquentes</h2><div class="q"><h3>Quelle est la différence principale entre CDP et DMP ?</h3><p>La nature des données. La CDP unifie de la donnée propriétaire identifiée et la conserve durablement ; la DMP agrégeait de la donnée tierce anonyme à durée de vie courte, destinée à l'achat média.</p></div><div class="q"><h3>La DMP est-elle morte ?</h3><p>Le modèle historique adossé aux cookies tiers s'éteint. La fonction d'extension d'audience subsiste, mais elle s'appuie désormais sur de la donnée propriétaire et sur des environnements de collaboration encadrés.</p></div><div class="q"><h3>Faut-il les deux ?</h3><p>Rarement. La plupart des organisations ont besoin d'un socle unifié de donnée propriétaire, puis d'une capacité d'extension d'audience. Le second besoin ne justifie plus un outil séparé dans la majorité des cas.</p></div><div class="q"><h3>Par quoi commencer quand on n&#x27;a ni l&#x27;un ni l&#x27;autre ?</h3><p>Par l'inventaire des sources internes et la mesure du taux d'identification actuel du chiffre d'affaires. Ce diagnostic détermine l'ampleur réelle du chantier, avant tout choix d'outil.</p></div></div>
+      <div class="sources"><h4>Sources à consulter</h4><ul><li>CDP Institute, comparatifs de référence CDP et DMP.</li><li>IAB Europe, état des lieux de l'après-cookie tiers.</li><li>CNIL, cadre applicable aux traceurs et au consentement.</li></ul></div>
+      <div class="cta-band">
+  <h3>Découvrez le potentiel réel de votre base</h3>
+  <p>Un POC Data Discovery en 3 étapes : on connecte, on analyse, on vous restitue le potentiel d'activation chiffré. Les résultats de l'analyse restent votre propriété.</p>
+  <a class="b" href="https://alexgarnier-cloud.github.io/boost/#lp-demo">Organiser un POC Data Discovery</a>
+</div>
+      <div class="next"><a href="https://alexgarnier-cloud.github.io/boost/blog/cdp-definition/"><div class="t">À lire aussi</div><div class="h">Qu&#x27;est-ce qu&#x27;une CDP (Customer Data Platform) ?</div></a><a href="https://alexgarnier-cloud.github.io/boost/blog/strategie-first-party-data/"><div class="t">À lire aussi</div><div class="h">Stratégie first-party data : comment la construire ?</div></a></div>
+    </div>
+    <aside class="rail">
+      <h4>Sommaire</h4>
+      <ol><li><a href="#qu-est-ce-qu-une-cdp">Qu'est-ce qu'une CDP ?</a></li><li><a href="#qu-est-ce-qu-une-dmp">Qu'est-ce qu'une DMP ?</a></li><li><a href="#cdp-vs-dmp-les-differences-cles">CDP vs DMP : les différences clés</a></li><li><a href="#pourquoi-la-dmp-decline">Pourquoi la DMP décline</a></li><li><a href="#l-application-au-retail-et-au-marketing-local">L'application au retail et au marketing local</a></li><li><a href="#cdp-ou-dmp-laquelle-choisir">CDP ou DMP : laquelle choisir ?</a></li></ol>
+      <div class="box"><span class="b">POC Data Discovery</span>
+        <p>Connectez, enrichissez, activez avec certitude. On vous restitue le potentiel d'activation chiffré de votre base.</p>
+        <a class="cta" href="https://alexgarnier-cloud.github.io/boost/#lp-demo">Organiser un POC</a></div>
+    </aside>
+  </div>
+</div>
+<footer class="bf"><div class="bf-in">
+  <div>Boost Platform · le socle d'identité et de data propriétaire du retail et du local</div>
+  <div><a href="https://alexgarnier-cloud.github.io/boost/">Accueil</a> · <a href="https://alexgarnier-cloud.github.io/boost/blog/">Blog</a></div>
+</div><div class="bf-in" style="margin-top:14px;font-size:13px"><a href="https://alexgarnier-cloud.github.io/boost/blog/drive-to-store/">Drive-to-store &amp; mesure</a> · <a href="https://alexgarnier-cloud.github.io/boost/blog/identite-client/">Identité client &amp; data</a> · <a href="https://alexgarnier-cloud.github.io/boost/blog/data-discovery/">Data Discovery</a> · <a href="https://alexgarnier-cloud.github.io/boost/blog/marketing-local/">Marketing local &amp; zones de chalandise</a> · <a href="https://alexgarnier-cloud.github.io/boost/blog/retail-media/">Retail media &amp; activation</a> · <a href="https://alexgarnier-cloud.github.io/boost/blog/conformite/">Conformité &amp; gouvernance</a> · <a href="https://alexgarnier-cloud.github.io/boost/blog/etudes/">Études &amp; baromètres</a></div></footer></body></html>

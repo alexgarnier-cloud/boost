@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comment mesurer le drive-to-store (online-to-store) ?</title>
+<meta name="description" content="Méthodes de mesure du trafic généré en point de vente : panels, groupes de contrôle, in-store lift, signaux GPS. Les KPIs à suivre et les précautions méthodologiques.">
+<link rel="canonical" href="https://alexgarnier-cloud.github.io/boost/blog/mesurer-drive-to-store/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Comment mesurer le drive-to-store (online-to-store) ?">
+<meta property="og:description" content="Méthodes de mesure du trafic généré en point de vente : panels, groupes de contrôle, in-store lift, signaux GPS. Les KPIs à suivre et les précautions méthodologiques.">
+<meta property="og:url" content="https://alexgarnier-cloud.github.io/boost/blog/mesurer-drive-to-store/">
+<meta property="og:site_name" content="Boost Platform">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Comment mesurer le drive-to-store (online-to-store) ?">
+<meta name="twitter:description" content="Méthodes de mesure du trafic généré en point de vente : panels, groupes de contrôle, in-store lift, signaux GPS. Les KPIs à suivre et les précautions méthodologiques.">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/blog.css?v=4">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Comment mesurer le drive-to-store", "description": "Méthodes de mesure du trafic généré en point de vente : panels, groupes de contrôle, in-store lift, signaux GPS. Les KPIs à suivre et les précautions méthodologiques.", "inLanguage": "fr-FR", "datePublished": "2026-07-25", "dateModified": "2026-07-25", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://alexgarnier-cloud.github.io/boost/blog/mesurer-drive-to-store/"}, "author": {"@type": "Organization", "name": "Boost Platform"}, "publisher": {"@type": "Organization", "name": "Boost Platform"}, "articleSection": "Drive-to-store & mesure"}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Blog", "item": "https://alexgarnier-cloud.github.io/boost/blog/"}, {"@type": "ListItem", "position": 2, "name": "Drive-to-store & mesure", "item": "https://alexgarnier-cloud.github.io/boost/blog/drive-to-store/"}, {"@type": "ListItem", "position": 3, "name": "Comment mesurer le drive-to-store", "item": "https://alexgarnier-cloud.github.io/boost/blog/mesurer-drive-to-store/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Comment mesurer l'impact d'une campagne sur le trafic en point de vente ?", "acceptedAnswer": {"@type": "Answer", "text": "En comparant une population exposée à un groupe de contrôle comparable non exposé, puis en observant l'écart de visites. Cet écart, et non le volume brut de visites, constitue l'effet réel de la campagne."}}, {"@type": "Question", "name": "Qu'appelle-t-on in-store lift ?", "acceptedAnswer": {"@type": "Answer", "text": "L'augmentation relative des visites ou des ventes observée sur la population exposée par rapport au groupe de contrôle. C'est la traduction chiffrée de l'incrémentalité."}}, {"@type": "Question", "name": "Comment fonctionne la mesure par signaux GPS ?", "acceptedAnswer": {"@type": "Answer", "text": "Elle s'appuie sur des données de localisation d'utilisateurs ayant consenti à ce traitement, pour détecter une présence dans la zone d'un point de vente. La qualité dépend du volume de signaux, de leur précision et de la définition des zones."}}, {"@type": "Question", "name": "Quel est le principal biais à éviter ?", "acceptedAnswer": {"@type": "Answer", "text": "Le groupe de contrôle mal construit. Si la population non exposée diffère de la population exposée en zone, en profil ou en fréquence de visite, l'écart mesuré ne mesure plus la campagne."}}]}</script>
+</head>
+<body>
+<header class="bh"><div class="bh-in">
+  <a class="bh-logo" href="../"><img src="../../assets/bp-logo.png" alt="Boost Platform" width="900" height="103"></a>
+  <nav class="bh-nav"><a href="../../">Accueil</a><a href="../drive-to-store/" class="on">Drive-to-store</a><a href="../identite-client/">Identité client</a><a href="../data-discovery/">Data Discovery</a><a href="../marketing-local/">Marketing local</a><a href="../retail-media/">Retail media</a><a href="../conformite/">Conformité</a><a href="../etudes/">Études</a></nav>
+  <a class="bh-cta" href="https://alexgarnier-cloud.github.io/boost/#lp-demo">Demander une démo</a>
+</div></header>
+<div class="wrap">
+  <div class="mast" style="padding-bottom:26px">
+    <div class="kick">Drive-to-store</div>
+    <h1>Comment mesurer le drive-to-store</h1>
+    <p class="lede">Le drive-to-store, aussi appelé online-to-store, désigne la capacité d'une campagne digitale à générer des visites et des achats en point de vente physique. La mesure drive to store consiste donc à relier une exposition publicitaire online (display, social, search, retail media, vidéo) à une visite réelle en point de vente, puis idéalement à un achat encaissé. C'est l'un des exercices les plus délicats du marketing local, car entre le clic et le passage en caisse s'intercale un espace physique où le comportement du consommateur devient difficile à observer. Le point de vente reste, pour beaucoup d'annonceurs, une boîte noire.</p>
+  </div>
+  <div class="art">
+    <div class="art-body">
+      <div class="byline"><span>Boost Platform</span><span class="dot"></span><span>2026-07-25</span><span class="dot"></span><span>6 min de lecture</span><span class="dot"></span><a href="https://alexgarnier-cloud.github.io/boost/blog/drive-to-store/">Drive-to-store &amp; mesure</a></div>
+      <div class="tldr"><span class="b">L'essentiel</span><ul><li>Mesurer le drive-to-store, c'est établir le lien entre une exposition média et une visite physique, ce que les indicateurs de campagne ne montrent jamais.</li><li>La notion clé est l'incrémentalité : la visite qui n'aurait pas eu lieu sans la campagne, mesurée contre un groupe de contrôle.</li><li>Les signaux de mobilité permettent d'observer la visite à l'échelle du point de vente, sous réserve de consentement et de précision de localisation.</li><li>Les indicateurs qui structurent le pilotage sont le taux de visite incrémentale, le coût par visite et le chiffre d'affaires attribué, par point de vente et par canal.</li></ul></div>
+      
+<h2 id="pourquoi-le-point-de-vente-reste-une-boite-noire">Pourquoi le point de vente reste une boîte noire</h2>
+<p>Sur le web, chaque interaction laisse une trace : impression, clic, ajout au panier, conversion. En point de vente physique, cette continuité se rompt. Un consommateur peut voir une publicité sur son mobile le matin, se rendre en point de vente le soir, payer en espèces et repartir sans qu'aucun lien technique n'ait été établi entre les deux événements. Cette rupture de la chaîne d'attribution explique pourquoi une part importante des budgets média locaux reste évaluée de façon indirecte, à partir d'estimations plutôt que de faits observés.</p>
+<p>L'enjeu de la mesure drive to store est donc double : rendre visible ce trafic généré hors ligne, et surtout distinguer les visites qui n'auraient pas eu lieu sans la campagne. C'est cette notion d'incrémentalité qui sépare une simple corrélation d'un véritable effet causal.</p>
+
+<h2 id="les-grandes-methodes-de-mesure">Les grandes méthodes de mesure</h2>
+<p>Plusieurs approches coexistent, souvent complémentaires. Chacune répond à une contrainte de disponibilité de données et présente ses propres limites méthodologiques.</p>
+<ul>
+<li><strong>Panels consommateurs</strong> : un échantillon de personnes recrutées déclare ou fait remonter ses comportements d'exposition et d'achat. Utile pour projeter des tendances, mais dépendant de la représentativité et de la taille de l'échantillon.</li>
+<li><strong>Signaux de géolocalisation (GPS)</strong> : l'analyse de signaux de localisation, collectés avec consentement, permet d'observer si des individus exposés à une campagne se sont rendus dans une zone correspondant à un point de vente.</li>
+<li><strong>Matching données de caisse et CRM</strong> : le rapprochement entre une base d'exposés et les transactions enregistrées en caisse ou dans le programme de fidélité relie directement la publicité à l'achat, à condition de disposer d'un identifiant commun.</li>
+<li><strong>Protocoles test contre contrôle</strong> : on compare un groupe exposé à un groupe témoin comparable non exposé, afin d'isoler l'effet réel de la campagne (voir plus bas).</li>
+<li><strong>Marketing Mix Modeling (MMM)</strong> : une modélisation statistique estime la contribution de chaque levier média aux ventes globales, à partir de séries historiques. Approche macro, sans donnée individuelle, mais moins précise à l'échelle d'un point de vente ou d'une campagne courte.</li>
+</ul>
+
+<h3>Comparatif synthétique</h3>
+<table>
+<thead>
+<tr><th>Méthode</th><th>Principe</th><th>Limites</th></tr>
+</thead>
+<tbody>
+<tr><td>Panels</td><td>Échantillon suivi dans le temps</td><td>Représentativité, taille, coût de recrutement</td></tr>
+<tr><td>Signaux GPS</td><td>Observation des déplacements vers les points de vente</td><td>Consentement, précision de localisation, couverture</td></tr>
+<tr><td>Matching caisse et CRM</td><td>Rapprochement exposition et transaction réelle</td><td>Nécessite un identifiant commun et un taux d'appariement suffisant</td></tr>
+<tr><td>Test contre contrôle</td><td>Comparaison exposés et groupe témoin</td><td>Constitution d'un témoin vraiment comparable</td></tr>
+<tr><td>MMM</td><td>Modélisation statistique des ventes</td><td>Vision macro, peu granulaire, historique long requis</td></tr>
+</tbody>
+</table>
+
+<h2 id="in-store-lift-et-incrementalite">In-store lift et incrémentalité</h2>
+<p>Le cœur d'une mesure drive to store rigoureuse repose sur l'in-store lift, c'est-à-dire l'écart de fréquentation ou de ventes entre une population exposée et une population non exposée. Observer que les personnes ayant vu une publicité visitent le point de vente ne suffit pas : ces individus étaient peut-être déjà intentionnistes. L'incrémentalité mesure la part de visites ou de ventes réellement provoquée par la campagne, et non celle qui serait survenue de toute façon.</p>
+<p>Le protocole de référence reste l'expérimentation avec groupe de contrôle. On constitue deux populations aux profils équivalents, l'une exposée à la campagne, l'autre non. La différence de comportement observée entre les deux groupes donne une estimation causale de l'effet. Cette logique, proche d'un test A/B appliqué au monde physique, est aujourd'hui la manière la plus solide d'établir qu'une campagne a bien créé du trafic additionnel.</p>
+
+<h2 id="la-mesure-par-signaux-gps">La mesure par signaux GPS</h2>
+<p>Parmi ces méthodes, l'exploitation de signaux de géolocalisation occupe une place particulière car elle observe directement le déplacement physique, là où les autres approches l'infèrent. Le principe est le suivant : à partir de signaux de localisation collectés avec le consentement des personnes, on identifie les passages dans une zone géographique correspondant à un point de vente, puis on compare la fréquence de ces passages entre exposés et non exposés.</p>
+<p>Concrètement, cette méthode permet d'établir des zones de chalandise réelles (d'où viennent effectivement les visiteurs d'un point de vente) et de mesurer un uplift de fréquentation attribuable à une campagne. Sa qualité dépend de trois facteurs : le volume et la représentativité des signaux disponibles, la précision de la localisation (pour ne pas confondre un point de vente avec un commerce voisin) et, bien sûr, le respect du cadre de consentement. Bien mise en œuvre, elle offre une lecture factuelle du trafic généré, complémentaire du matching en caisse qui, lui, relie ce trafic à l'achat.</p>
+
+<h2 id="les-kpis-a-suivre">Les KPIs à suivre</h2>
+<p>Une mesure exploitable se traduit par un petit nombre d'indicateurs clairs, comparables d'une campagne à l'autre :</p>
+<ul>
+<li><strong>Visites incrémentales</strong> : nombre de visites en point de vente réellement générées par la campagne, au-delà du niveau naturel.</li>
+<li><strong>Taux d'uplift de fréquentation (in-store lift)</strong> : écart relatif de visites entre exposés et témoins.</li>
+<li><strong>Coût par visite incrémentale</strong> : budget média rapporté au nombre de visites additionnelles, indicateur d'efficience directement actionnable.</li>
+<li><strong>Uplift de ventes</strong> : progression du chiffre d'affaires ou du panier attribuable à la campagne, lorsque le matching caisse est disponible.</li>
+<li><strong>Taux de conversion visite vers achat</strong> : part des visiteurs incrémentaux ayant effectivement acheté.</li>
+</ul>
+
+<h2 id="bonnes-pratiques-methodologiques">Bonnes pratiques méthodologiques</h2>
+<p>La fiabilité d'une mesure drive to store tient moins à l'outil qu'à la rigueur du dispositif. Quelques principes reviennent systématiquement :</p>
+<ol>
+<li><strong>Constituer un vrai groupe témoin</strong> comparable au groupe exposé (mêmes profils, mêmes zones, même période), afin que la différence observée reflète bien l'effet de la campagne et non un biais de sélection.</li>
+<li><strong>Cadrer la période de mesure</strong> : prévoir une fenêtre pré-campagne pour établir un niveau de référence, la période de campagne, et une fenêtre post-exposition suffisante pour capter les visites différées.</li>
+<li><strong>Délimiter les zones de chalandise</strong> à partir des comportements réels plutôt que d'un simple rayon théorique autour du point de vente.</li>
+<li><strong>Assurer un volume suffisant</strong> : sans masse critique d'exposés et de visites, l'écart mesuré n'est pas statistiquement significatif.</li>
+<li><strong>Croiser les méthodes</strong> : combiner signaux de fréquentation et données de caisse donne une vue plus complète que chaque source isolée.</li>
+</ol>
+
+<h2 id="limites-et-vigilance">Limites et vigilance</h2>
+<p>Aucune méthode ne fournit une vérité absolue. L'attribution reste probabiliste : relier une exposition à une visite implique toujours une part de modélisation et d'hypothèses. Les parcours multi-canaux, où plusieurs points de contact précèdent l'achat, compliquent l'affectation du mérite à un levier unique. Les signaux physiques comportent des imprécisions de localisation et une couverture partielle de la population.</p>
+<p>Enfin, la dimension vie privée est centrale. Toute mesure fondée sur des données de localisation ou d'identité doit reposer sur un consentement explicite, une minimisation des données et un cadre conforme au RGPD. La qualité d'une mesure ne se juge pas seulement à sa précision, mais aussi à la solidité de ses fondements en matière de protection des données.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>Mesurer le drive-to-store, c'est transformer le point de vente de boîte noire en surface observable, en reliant l'exposition online au trafic et aux ventes hors ligne. Aucune méthode ne suffit seule : la robustesse naît de la combinaison d'un protocole test contre contrôle rigoureux, d'indicateurs d'incrémentalité clairs et de sources de données complémentaires. Dans ce paysage, la mesure par signaux de géolocalisation et le croisement avec une donnée propriétaire de qualité offrent une lecture factuelle du parcours online-to-store, à condition de rester méthodique et respectueux du consentement.</p>
+
+      <div class="faq"><h2 id="faq">Questions fréquentes</h2><div class="q"><h3>Comment mesurer l&#x27;impact d&#x27;une campagne sur le trafic en point de vente ?</h3><p>En comparant une population exposée à un groupe de contrôle comparable non exposé, puis en observant l'écart de visites. Cet écart, et non le volume brut de visites, constitue l'effet réel de la campagne.</p></div><div class="q"><h3>Qu&#x27;appelle-t-on in-store lift ?</h3><p>L'augmentation relative des visites ou des ventes observée sur la population exposée par rapport au groupe de contrôle. C'est la traduction chiffrée de l'incrémentalité.</p></div><div class="q"><h3>Comment fonctionne la mesure par signaux GPS ?</h3><p>Elle s'appuie sur des données de localisation d'utilisateurs ayant consenti à ce traitement, pour détecter une présence dans la zone d'un point de vente. La qualité dépend du volume de signaux, de leur précision et de la définition des zones.</p></div><div class="q"><h3>Quel est le principal biais à éviter ?</h3><p>Le groupe de contrôle mal construit. Si la population non exposée diffère de la population exposée en zone, en profil ou en fréquence de visite, l'écart mesuré ne mesure plus la campagne.</p></div></div>
+      <div class="sources"><h4>Sources à consulter</h4><ul><li>CNIL, cadre applicable aux données de géolocalisation et au consentement.</li><li>IAB Europe, travaux sur la mesure et l'attribution.</li><li>Procos, indices de fréquentation du commerce spécialisé (à vérifier à la source pour tout chiffre publié).</li></ul></div>
+      <div class="cta-band">
+  <h3>Découvrez le potentiel réel de votre base</h3>
+  <p>Un POC Data Discovery en 3 étapes : on connecte, on analyse, on vous restitue le potentiel d'activation chiffré. Les résultats de l'analyse restent votre propriété.</p>
+  <a class="b" href="https://alexgarnier-cloud.github.io/boost/#lp-demo">Organiser un POC Data Discovery</a>
+</div>
+      <div class="next"><a href="https://alexgarnier-cloud.github.io/boost/blog/marketing-local-definition/"><div class="t">À lire aussi</div><div class="h">Qu&#x27;est-ce que le marketing local ?</div></a><a href="https://alexgarnier-cloud.github.io/boost/blog/retail-media-definition/"><div class="t">À lire aussi</div><div class="h">Qu&#x27;est-ce que le retail media ?</div></a></div>
+    </div>
+    <aside class="rail">
+      <h4>Sommaire</h4>
+      <ol><li><a href="#pourquoi-le-point-de-vente-reste-une-boite-noire">Pourquoi le point de vente reste une boîte noire</a></li><li><a href="#les-grandes-methodes-de-mesure">Les grandes méthodes de mesure</a></li><li><a href="#in-store-lift-et-incrementalite">In-store lift et incrémentalité</a></li><li><a href="#la-mesure-par-signaux-gps">La mesure par signaux GPS</a></li><li><a href="#les-kpis-a-suivre">Les KPIs à suivre</a></li><li><a href="#bonnes-pratiques-methodologiques">Bonnes pratiques méthodologiques</a></li><li><a href="#limites-et-vigilance">Limites et vigilance</a></li><li><a href="#conclusion">Conclusion</a></li></ol>
+      <div class="box"><span class="b">POC Data Discovery</span>
+        <p>Connectez, enrichissez, activez avec certitude. On vous restitue le potentiel d'activation chiffré de votre base.</p>
+        <a class="cta" href="https://alexgarnier-cloud.github.io/boost/#lp-demo">Organiser un POC</a></div>
+    </aside>
+  </div>
+</div>
+<footer class="bf"><div class="bf-in">
+  <div>Boost Platform · le socle d'identité et de data propriétaire du retail et du local</div>
+  <div><a href="https://alexgarnier-cloud.github.io/boost/">Accueil</a> · <a href="https://alexgarnier-cloud.github.io/boost/blog/">Blog</a></div>
+</div><div class="bf-in" style="margin-top:14px;font-size:13px"><a href="https://alexgarnier-cloud.github.io/boost/blog/drive-to-store/">Drive-to-store &amp; mesure</a> · <a href="https://alexgarnier-cloud.github.io/boost/blog/identite-client/">Identité client &amp; data</a> · <a href="https://alexgarnier-cloud.github.io/boost/blog/data-discovery/">Data Discovery</a> · <a href="https://alexgarnier-cloud.github.io/boost/blog/marketing-local/">Marketing local &amp; zones de chalandise</a> · <a href="https://alexgarnier-cloud.github.io/boost/blog/retail-media/">Retail media &amp; activation</a> · <a href="https://alexgarnier-cloud.github.io/boost/blog/conformite/">Conformité &amp; gouvernance</a> · <a href="https://alexgarnier-cloud.github.io/boost/blog/etudes/">Études &amp; baromètres</a></div></footer></body></html>
