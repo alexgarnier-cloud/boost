@@ -1683,11 +1683,17 @@ h1 span.ul-acc, h2 span.ul-acc, h3 span.ul-acc{
    sans animation, il doit être visible immédiatement. */
 .hero-letters{ opacity:1 !important; animation:none !important; margin-top:44px }
 
-/* Schéma du pipeline : état final forcé, puisque l'animation est retirée */
+/* Filet de sécurité si le schéma du pipeline revient un jour : sans animation,
+   ses éléments doivent partir de leur état final et non de opacity:0. */
 .module{ opacity:1 !important; transform:none !important; animation:none !important }
 .connector{ stroke-dashoffset:0 !important; animation:none !important }
 .io-label{ opacity:1 !important; animation:none !important }
 .pulse-dot{ display:none !important }
+
+/* « Cinq briques » et les cinq cartes ne forment plus qu'un seul bloc :
+   ni filet de séparation ni double padding entre le titre et les cartes. */
+#animation{ padding-bottom:0 }
+#product{ border-top:none !important; padding-top:34px }
 
 html{-webkit-text-size-adjust:100%}
 body{overflow-x:hidden}
@@ -1762,97 +1768,10 @@ table{max-width:100%}
 <section id="animation">
   <div class="kicker">La Plateforme</div>
   <h2>Cinq briques. Un pipeline.<br>De l'identité résolue au revenu mesuré.</h2>
-  <p class="lead">Vos identités clients sont réconciliées, matchées, enrichies, localisées, puis activées et mesurées.</p>
-
-  <div class="pipe-stage">
-    <svg id="pipe-svg" viewBox="0 0 920 280" xmlns="http://www.w3.org/2000/svg">
-
-      <!-- input label -->
-      <g class="io-label io-in">
-        <text x="40" y="62" font-size="11" fill="#5B5566" letter-spacing="2">VOS DONNÉES CLIENTS</text>
-        <path d="M 40 74 l 0 14 m -4 -5 l 4 5 l 4 -5" stroke="#E6E2EC" stroke-width="2" fill="none" stroke-linecap="round"/>
-      </g>
-
-      <!-- connectors -->
-      <line class="connector c1" x1="190" y1="150" x2="230" y2="150" stroke="#3B1C5F" stroke-width="2.5" stroke-linecap="round"/>
-      <line class="connector c2" x1="345" y1="150" x2="385" y2="150" stroke="#3B1C5F" stroke-width="2.5" stroke-linecap="round"/>
-      <line class="connector c3" x1="500" y1="150" x2="540" y2="150" stroke="#3B1C5F" stroke-width="2.5" stroke-linecap="round"/>
-      <line class="connector c4" x1="655" y1="150" x2="695" y2="150" stroke="#3B1C5F" stroke-width="2.5" stroke-linecap="round"/>
-
-      <!-- MODULE 1 : CDP -->
-      <g class="module m1">
-        <rect x="40" y="95" width="150" height="110" rx="12" fill="#FFFFFF" stroke="#E6E2EC" stroke-width="1.5"/>
-        <rect x="40" y="95" width="150" height="4" rx="2" fill="#3B1C5F"/>
-        <g transform="translate(101,115)" stroke="#3B1C5F" stroke-width="1.7" fill="none" stroke-linecap="round">
-          <ellipse cx="7" cy="3" rx="9" ry="3.4"/><path d="M-2 3v7c0 1.9 4 3.4 9 3.4s9-1.5 9-3.4V3"/>
-        </g>
-        <text x="115" y="162" text-anchor="middle" font-size="14" font-weight="800" fill="#FFFFFF">CDP</text>
-        <text x="115" y="182" text-anchor="middle" font-size="9.5" font-weight="700" fill="#3B1C5F" letter-spacing="1.5">UNIFIER</text>
-      </g>
-
-      <!-- MODULE 2 : Dékuple ID -->
-      <g class="module m2">
-        <rect x="195" y="95" width="150" height="110" rx="12" fill="#FFFFFF" stroke="#E6E2EC" stroke-width="1.5"/>
-        <rect x="195" y="95" width="150" height="4" rx="2" fill="#3B1C5F"/>
-        <g transform="translate(255,113)" stroke="#3B1C5F" stroke-width="1.7" fill="none">
-          <circle cx="5" cy="5" r="4.5"/><circle cx="16" cy="13" r="4.5"/><path d="M8.5 8 l 4.5 3.4" stroke-linecap="round"/>
-        </g>
-        <text x="270" y="162" text-anchor="middle" font-size="14" font-weight="800" fill="#FFFFFF">Dékuple ID</text>
-        <text x="270" y="182" text-anchor="middle" font-size="9.5" font-weight="700" fill="#3B1C5F" letter-spacing="1.5">CONNECTER</text>
-      </g>
-
-      <!-- MODULE 3 : 40M Profiles -->
-      <g class="module m3">
-        <rect x="350" y="95" width="150" height="110" rx="12" fill="#FFFFFF" stroke="#E6E2EC" stroke-width="1.5"/>
-        <rect x="350" y="95" width="150" height="4" rx="2" fill="#3B1C5F"/>
-        <g transform="translate(415,112)" stroke="#3B1C5F" stroke-width="1.7" fill="none" stroke-linecap="round">
-          <rect x="0" y="0" width="13" height="22" rx="3"/><line x1="4.5" y1="18.5" x2="8.5" y2="18.5"/>
-        </g>
-        <text x="425" y="162" text-anchor="middle" font-size="14" font-weight="800" fill="#FFFFFF">40M Profils</text>
-        <text x="425" y="182" text-anchor="middle" font-size="9.5" font-weight="700" fill="#3B1C5F" letter-spacing="1.5">ENRICHIR</text>
-      </g>
-
-      <!-- MODULE 4 : Données GPS -->
-      <g class="module m4">
-        <rect x="505" y="95" width="150" height="110" rx="12" fill="#FFFFFF" stroke="#E6E2EC" stroke-width="1.5"/>
-        <rect x="505" y="95" width="150" height="4" rx="2" fill="#3B1C5F"/>
-        <g transform="translate(568,111)" stroke="#3B1C5F" stroke-width="1.7" fill="none">
-          <path d="M11 24 C 6.5 19 4.5 16 4.5 13 a 6.5 6.5 0 0 1 13 0 c 0 3 -2 6 -6.5 11 Z"/><circle cx="11" cy="13" r="2.4"/>
-        </g>
-        <text x="580" y="162" text-anchor="middle" font-size="14" font-weight="800" fill="#FFFFFF">Données GPS</text>
-        <text x="580" y="182" text-anchor="middle" font-size="9.5" font-weight="700" fill="#3B1C5F" letter-spacing="1.5">LOCALISER</text>
-      </g>
-
-      <!-- MODULE 5 : Activate + Measure -->
-      <g class="module m5">
-        <rect x="660" y="95" width="150" height="110" rx="12" fill="#FFFFFF" stroke="#E6E2EC" stroke-width="1.5"/>
-        <rect x="660" y="95" width="150" height="4" rx="2" fill="#3B1C5F"/>
-        <g transform="translate(718,114)" stroke="#3B1C5F" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M0 18 L 6 11 L 11 14.5 L 19 4"/><path d="M14.5 4 h 4.5 v 4.5"/>
-        </g>
-        <text x="735" y="158" text-anchor="middle" font-size="13" font-weight="800" fill="#FFFFFF">Activation &amp;</text>
-        <text x="735" y="172" text-anchor="middle" font-size="13" font-weight="800" fill="#FFFFFF">Mesure</text>
-        <text x="735" y="190" text-anchor="middle" font-size="9.5" font-weight="700" fill="#3B1C5F" letter-spacing="1.2">ACTIVER · MESURER</text>
-      </g>
-
-      <!-- data pulses -->
-      <circle class="pulse-dot"     cx="40" cy="150" r="5.5" fill="#3B1C5F" style="filter:drop-shadow(0 0 7px #BAE500)"/>
-      <circle class="pulse-dot pd2" cx="40" cy="150" r="5.5" fill="#3B1C5F" style="filter:drop-shadow(0 0 7px #BAE500)"/>
-      <circle class="pulse-dot pd3" cx="40" cy="150" r="5.5" fill="#3B1C5F" style="filter:drop-shadow(0 0 7px #BAE500)"/>
-
-      <!-- output badge -->
-      <g class="io-label io-out">
-        <rect x="826" y="132" width="88" height="36" rx="18" fill="#FFFFFF" stroke="#3B1C5F" stroke-width="1.5"/>
-        <path d="M 837 156 l 5 -5 l 4 3 l 7 -8" stroke="#3B1C5F" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        <text x="881" y="154.5" text-anchor="middle" font-size="10.5" font-weight="800" fill="#3B1C5F">Revenus</text>
-      </g>
-    </svg>
-  </div>
+  <p class="lead">Tout ce qu'il faut pour unifier vos données clients, les activer localement et prouver l'impact business, sans projet IT ni connecteurs tiers.</p>
 </section>
 
 <div id="lp-product"><section id="product">
-  <p class="lead">Tout ce qu'il faut pour unifier vos données clients, les activer localement et prouver l'impact business, sans projet IT ni connecteurs tiers.</p>
-
   <div class="prod-grid">
 
     <div class="prod-card">
@@ -1900,7 +1819,7 @@ table{max-width:100%}
       <div class="picon"><svg viewBox="0 0 24 24" fill="none" stroke="#3B1C5F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
         <path d="M4 19 L 9 13 L 13 16 L 20 7"/><path d="M16 7 h 4 v 4"/>
       </svg></div>
-      <h3>Activation &amp; Measurement</h3>
+      <h3>Activation et mesure</h3>
       <span class="role">Activer · Mesurer</span>
       <p>Orchestrez des campagnes SMS, RCS et media drive-to-store par point de vente, puis mesurez ce qui compte : visites incrémentales avec groupes de contrôle, coût par visite, ROAS et ventes en point de vente, dans un dashboard temps réel.</p>
     </div>
@@ -1911,7 +1830,7 @@ table{max-width:100%}
     <span class="step"><b>01</b>Unifier</span><span class="arr">→</span>
     <span class="step"><b>02</b>Activer</span><span class="arr">→</span>
     <span class="step"><b>03</b>Mesurer</span><span class="arr">→</span>
-    <span class="step"><b>04</b>Optimize</span><span class="arr">↺</span>
+    <span class="step"><b>04</b>Optimiser</span><span class="arr">↺</span>
   </div>
 </section></div>
 
