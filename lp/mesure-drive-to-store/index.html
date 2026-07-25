@@ -1,6 +1,11 @@
-<!DOCTYPE html>
-<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Merci, votre demande est bien reçue | Boost Platform</title>
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mesurer l'impact réel de vos campagnes en point de vente | Boost Platform</title>
+<meta name="description" content="Reliez vos campagnes média à la fréquentation réelle de vos points de vente grâce à 45 millions de signaux GPS. Recevez l'étude drive-to-store 2026.">
+<meta name="robots" content="noindex,follow">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;1,400&family=Space+Mono:wght@400;700&display=swap');
 
@@ -1640,7 +1645,6 @@
   #lp-apps .ma-hd{ flex-direction:column; align-items:flex-start; gap:8px; }
 }
 </style>
-
 <style>
 /* ---- Correctifs charte claire + mobile (ajoutés au relight) ---- */
 /* Accent du titre : texte en encre, SOULIGNÉ en lime (pas de texte lime) */
@@ -1730,45 +1734,286 @@ table{max-width:100%}
 }
 </style>
 
-<style>.kicker.c{text-align:center}.kicker.c::after{margin-left:auto;margin-right:auto}</style>
-<meta name="robots" content="noindex,follow">
+<style>
+/* ---- Landing de conversion (Google Ads). Pas de nav : un seul objectif. ---- */
+.lp-top{ border-bottom:1px solid #E6E2EC; padding:18px 40px; display:flex;
+  align-items:center; justify-content:space-between; gap:20px; }
+.lp-top .lp-mention{ font-size:12.5px; color:#5B5566; }
+.lp-wrap{ max-width:1080px; margin:0 auto; padding:0 40px; }
+.lp-hero{ padding:64px 0 44px; }
+.lp-kick{ font-size:11px; letter-spacing:.25em; text-transform:uppercase; color:#3B1C5F; font-weight:700; }
+.lp-kick::after{ content:''; display:block; width:46px; height:4px; border-radius:2px;
+  background:#BAE500; margin-top:10px; }
+.lp-hero h1{ font-size:42px; font-weight:800; line-height:1.14; margin-top:22px; max-width:16em; color:#0E0A16; }
+.lp-hero h1 .u{ background-image:linear-gradient(#BAE500,#BAE500); background-repeat:no-repeat;
+  background-size:100% 6px; background-position:0 100%; padding:0 2px; }
+.lp-hero p.s{ font-size:17px; color:#5B5566; line-height:1.65; margin-top:20px; max-width:44em; }
+.lp-ctas{ display:flex; gap:14px; flex-wrap:wrap; margin-top:30px; }
+.lp-btn{ display:inline-block; text-decoration:none; font-size:14.5px; font-weight:700;
+  padding:14px 26px; border-radius:8px; }
+.lp-btn.p{ background:#3B1C5F; color:#fff; }
+.lp-btn.s{ border:1.5px solid #E6E2EC; color:#3B1C5F; }
+.lp-btn.s:hover{ border-color:#3B1C5F; }
+
+.lp-proof{ display:flex; gap:0; flex-wrap:wrap; border-top:1px solid #E6E2EC;
+  border-bottom:1px solid #E6E2EC; background:#F4F2F7; }
+.lp-proof .c{ padding:26px 30px; flex:1 1 250px; border-left:1px solid #E6E2EC; }
+.lp-proof .c:first-child{ border-left:none; }
+.lp-proof .n{ font-size:30px; font-weight:800; color:#3B1C5F; line-height:1; }
+.lp-proof .l{ font-size:13.5px; color:#5B5566; margin-top:8px; line-height:1.5; }
+
+.lp-sec2{ padding:60px 0; }
+.lp-sec2 h2{ font-size:29px; font-weight:800; color:#0E0A16; line-height:1.2; }
+.lp-sec2 p.i{ font-size:15.5px; color:#5B5566; line-height:1.7; margin-top:16px; max-width:46em; }
+.lp-cols{ display:flex; gap:22px; flex-wrap:wrap; margin-top:28px; }
+.lp-card{ flex:1 1 300px; background:#fff; border:1px solid #E6E2EC; border-top:3px solid #3B1C5F;
+  border-radius:10px; padding:24px; }
+.lp-card h3{ font-size:16.5px; font-weight:800; color:#0E0A16; }
+.lp-card .no{ font-size:12.5px; font-weight:800; color:#3B1C5F; letter-spacing:.08em; }
+.lp-card p, .lp-card li{ font-size:13.8px; color:#5B5566; line-height:1.6; }
+.lp-card ul{ list-style:none; padding:0; margin-top:12px; }
+.lp-card li{ position:relative; padding-left:16px; margin-bottom:8px; }
+.lp-card li::before{ content:''; position:absolute; left:0; top:8px; width:6px; height:6px;
+  border-radius:50%; background:#BAE500; }
+.lp-pain{ background:#F4F2F7; border-left:5px solid #BAE500; border-radius:0 12px 12px 0;
+  padding:26px 28px; margin-top:26px; }
+.lp-pain p{ font-size:15.5px; color:#2B2338; line-height:1.65; }
+
+.lp-flow{ display:flex; align-items:stretch; gap:0; flex-wrap:wrap; margin-top:30px; }
+.lp-flow .st{ flex:1 1 240px; background:#fff; border:1px solid #E6E2EC; border-top:3px solid #3B1C5F;
+  border-radius:10px; padding:22px; margin-right:14px; margin-bottom:14px; }
+.lp-flow .st:last-child{ margin-right:0; border-top-color:#BAE500; }
+.lp-flow .st b{ display:block; font-size:15.5px; color:#0E0A16; margin-bottom:8px; }
+.lp-flow .st span{ font-size:13.5px; color:#5B5566; line-height:1.6; }
+
+/* Le formulaire : coeur de la conversion, mis en avant */
+.lp-form-sec{ background:#F4F2F7; border-top:1px solid #E6E2EC; border-bottom:1px solid #E6E2EC;
+  padding:60px 0; }
+.lp-form-box{ background:#fff; border:1px solid #E6E2EC; border-top:3px solid #BAE500;
+  border-radius:12px; padding:34px 36px; max-width:560px; }
+.lp-form-box h3{ font-size:20px; font-weight:800; color:#0E0A16; line-height:1.25; }
+.lp-form-box .sub{ font-size:14px; color:#5B5566; margin-top:10px; line-height:1.6; }
+.lp-f{ margin-top:22px; }
+.lp-f label{ display:block; font-size:11px; font-weight:700; letter-spacing:.09em;
+  text-transform:uppercase; color:#5B5566; margin-bottom:6px; }
+.lp-f input, .lp-f select{ width:100%; font-family:inherit; font-size:16px; color:#2B2338;
+  background:#F4F2F7; border:1px solid #E6E2EC; border-radius:7px; padding:12px 14px;
+  margin-bottom:16px; }
+.lp-f input:focus, .lp-f select:focus{ outline:none; border-color:#3B1C5F; }
+.lp-f .row{ display:flex; gap:14px; }
+.lp-f .row > div{ flex:1; }
+.lp-submit{ width:100%; background:#3B1C5F; color:#fff; border:none; border-radius:8px;
+  font-family:inherit; font-size:15px; font-weight:800; padding:15px; cursor:pointer; }
+.lp-submit:hover{ background:#54297F; }
+.lp-legal{ font-size:12px; color:#5B5566; margin-top:14px; line-height:1.55; }
+
+.lp-trust{ padding:44px 0; }
+.lp-trust .row{ display:flex; gap:14px; flex-wrap:wrap; }
+.lp-trust .b{ font-size:12.5px; font-weight:700; color:#3B1C5F; background:rgba(186,229,0,.18);
+  border-radius:20px; padding:8px 16px; }
+.lp-final{ background:#3B1C5F; border-radius:14px; padding:42px 44px; margin:0 0 70px;
+  position:relative; overflow:hidden; }
+.lp-final::after{ content:''; position:absolute; top:0; left:0; width:6px; height:100%; background:#BAE500; }
+.lp-final h2{ color:#fff; font-size:26px; font-weight:800; line-height:1.25; }
+.lp-final p{ color:#CFC6E0; font-size:15px; margin-top:12px; line-height:1.6; max-width:44em; }
+.lp-final a{ display:inline-block; background:#BAE500; color:#0E0A16; font-weight:800;
+  text-decoration:none; padding:13px 26px; border-radius:8px; margin-top:22px; font-size:14.5px; }
+.lp-foot{ border-top:1px solid #E6E2EC; padding:26px 40px; font-size:12.5px; color:#5B5566;
+  display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; }
+
+@media (max-width:760px){
+  .lp-top, .lp-foot{ padding:16px 20px; }
+  .lp-wrap{ padding:0 20px; }
+  .lp-hero{ padding:40px 0 30px; }
+  .lp-hero h1{ font-size:30px; }
+  .lp-sec2 h2, .lp-final h2{ font-size:23px; }
+  .lp-f .row{ flex-direction:column; gap:0; }
+  .lp-form-box, .lp-final{ padding:24px 22px; }
+  .lp-proof .c{ border-left:none; border-top:1px solid #E6E2EC; }
+  .lp-proof .c:first-child{ border-top:none; }
+}
+</style>
+
 </head>
-<body class="landing">
+<body>
 
-<nav style="border-top:3px solid transparent;">
-  <a class="logo" href="../" style="display:inline-flex;align-items:center"><img src="../assets/bp-logo.png" alt="Boost Platform" width="900" height="103" style="height:26px;width:auto;display:block"></a>
-  <div class="nav-links">
-    <a href="../#lp-product">Plateforme</a>
-    <a href="../#lp-demo">Démo</a>
-    <a href="../#lp-clients">Cas clients</a>
-    <a href="../#lp-partners">Partenaires</a>
-<a href="../blog/">Blog</a>
+<div class="lp-top">
+  <a href="https://alexgarnier-cloud.github.io/boost/"><img src="https://alexgarnier-cloud.github.io/boost/assets/bp-logo.png" alt="Boost Platform" width="900" height="103" style="height:26px;width:auto;display:block"></a>
+  <div class="lp-mention">Une solution du groupe Dékuple</div>
+</div>
+
+<div class="lp-wrap">
+  <div class="lp-hero">
+    <div class="lp-kick">Mesure drive-to-store</div>
+    <h1>Enfin, mesurez l'impact réel de vos campagnes <span class="u">en point de vente</span>.</h1>
+    <p class="s">Boost Platform relie vos actions média à la fréquentation réelle de vos points de
+    vente, grâce à 45 millions de signaux GPS. Une visite observée, pas une visite modélisée.</p>
+    <div class="lp-ctas">
+      <a class="lp-btn p" href="#etude">Télécharger l'étude</a>
+      <a class="lp-btn s" href="https://alexgarnier-cloud.github.io/boost/demande/?objet=poc">Demander un audit</a>
+    </div>
   </div>
-  <a class="nav-cta" href="../demande/?objet=demo">Demander une démo</a>
-</nav>
+</div>
 
-<section style="padding-top:170px;padding-bottom:140px;max-width:760px;text-align:center">
-  <div class="kicker c">Demande envoyée</div>
-  <h2 style="margin-top:18px">Merci, votre demande est <span class="ul-acc">bien reçue</span>.</h2>
-  <p class="lead" style="margin:18px auto 0">Un membre de l'équipe Boost Platform revient vers vous
-  sous 48 heures ouvrées. Si votre demande est urgente, écrivez directement à
-  <a href="mailto:a.garnier@dekuple.com" style="color:#3B1C5F;font-weight:600">a.garnier@dekuple.com</a>.</p>
-  <p style="margin-top:34px;font-size:14px;color:#5B5566">
-    Redirection vers l'accueil dans <span id="cd">8</span> secondes.
-    <a href="../" style="color:#3B1C5F;font-weight:600">Y aller tout de suite</a>
-  </p>
-</section>
+<div class="lp-proof">
+  <div class="c"><div class="n">40 millions</div><div class="l">de consommateurs français
+    identifiés dans notre référentiel propriétaire</div></div>
+  <div class="c"><div class="n">45 millions</div><div class="l">de signaux GPS pour lire les zones
+    de chalandise réelles et la visite en point de vente</div></div>
+  <div class="c"><div class="n">Mesure native</div><div class="l">Okube, la mesure du groupe
+    Dékuple, intégrée à la plateforme</div></div>
+</div>
 
-<footer>
-  <div class="logo"><img src="../assets/bp-logo.png" alt="Boost Platform" width="900" height="103" style="height:26px;width:auto;display:block"></div>
-  <div>Data Activation Platform - BOOST</div>
-  <div><a href="../demande/">Nous contacter</a> · www.dekuple.com</div>
-</footer>
+<div class="lp-wrap lp-sec2">
+  <h2>Entre le clic et la caisse, il y a un trou dans votre attribution.</h2>
+  <div class="lp-pain">
+    <p>Vous investissez en média local, mais personne ne sait combien de visites en point de vente
+    cet investissement a réellement générées. Les indicateurs de campagne s'arrêtent au clic, la
+    caisse ne dit pas d'où vient le client, et l'arbitrage budgétaire se fait à l'estime.</p>
+  </div>
+  <div class="lp-cols">
+    <div class="lp-card"><div class="no">01</div><h3>Le média local n'est pas prouvé</h3>
+      <p>Impossible de dire quelle part du trafic en point de vente vient de la campagne, et quelle
+      part serait venue de toute façon.</p></div>
+    <div class="lp-card"><div class="no">02</div><h3>Les budgets s'arbitrent à l'aveugle</h3>
+      <p>Sans coût par visite par point de vente, on répartit le budget au prorata de la surface ou
+      de l'historique, pas du potentiel réel de la zone.</p></div>
+    <div class="lp-card"><div class="no">03</div><h3>La mesure est modélisée, pas observée</h3>
+      <p>Les approches statistiques donnent une tendance macro, jamais l'effet d'une campagne sur un
+      point de vente précis, sur une période courte.</p></div>
+  </div>
+</div>
+
+<div class="lp-wrap lp-sec2" style="padding-top:0">
+  <h2>Identifier, activer, mesurer : la boucle se referme sur la visite réelle.</h2>
+  <p class="i">Nous rapprochons l'exposition média et la visite physique observée, contre un groupe
+  de contrôle comparable. Vous ne raisonnez plus en clics, mais en visites incrémentales et en coût
+  par visite, point de vente par point de vente.</p>
+  <div class="lp-flow">
+    <div class="st"><b>1. Identifier</b><span>Votre base client est résolue contre un référentiel de
+      40 millions de consommateurs identifiés, puis enrichie et localisée.</span></div>
+    <div class="st"><b>2. Activer</b><span>Les campagnes sont géociblées sur la zone de chalandise
+      réelle de chaque point de vente, avec un groupe de contrôle prévu dès le départ.</span></div>
+    <div class="st"><b>3. Mesurer</b><span>La visite en point de vente est observée par signaux GPS,
+      pas estimée. Vous obtenez des visites incrémentales, un coût par visite et un ROAS par point
+      de vente.</span></div>
+  </div>
+</div>
+
+<div class="lp-wrap lp-sec2" style="padding-top:0">
+  <h2>Ce que cela change, selon votre fonction.</h2>
+  <div class="lp-cols">
+    <div class="lp-card"><div class="no">Direction marketing</div>
+      <h3>Prouver le ROI du média local</h3>
+      <ul>
+        <li>Défendre le budget média avec des visites, pas des impressions</li>
+        <li>Arbitrer entre points de vente et entre zones sur des données de fréquentation</li>
+        <li>Comparer les leviers à coût par visite constant</li>
+        <li>Couper ce qui ne produit pas de visite incrémentale</li>
+      </ul></div>
+    <div class="lp-card"><div class="no">Direction data et CRM</div>
+      <h3>Une mesure offline conforme, sur votre donnée</h3>
+      <ul>
+        <li>Réconciliation en ligne et hors ligne sur donnée propriétaire</li>
+        <li>Aucune dépendance aux cookies tiers</li>
+        <li>Signaux de mobilité anonymisés, cadre RGPD</li>
+        <li>Résultats réutilisables dans vos propres outils</li>
+      </ul></div>
+  </div>
+</div>
+
+<div class="lp-form-sec" id="etude">
+  <div class="lp-wrap">
+    <div class="lp-cols" style="align-items:flex-start">
+      <div style="flex:1 1 380px">
+        <h2 style="font-size:26px;font-weight:800;color:#0E0A16;line-height:1.25">
+          L'étude : mesurer le drive-to-store en 2026</h2>
+        <p style="font-size:15px;color:#5B5566;line-height:1.7;margin-top:14px;max-width:34em">
+          Le guide de référence pour les enseignes à réseau physique qui veulent prouver l'effet de
+          leur média sur la fréquentation.</p>
+        <div class="lp-card" style="border-top-color:#BAE500;margin-top:22px;max-width:34em">
+          <ul>
+            <li>Les cinq méthodes de mesure comparées, avec leurs limites réelles</li>
+            <li>Comment construire un groupe de contrôle qui tient devant une direction financière</li>
+            <li>Les indicateurs à suivre : visites incrémentales, coût par visite, ROAS par point de vente</li>
+          </ul>
+        </div>
+      </div>
+      <div style="flex:1 1 420px">
+        <div class="lp-form-box">
+          <h3>Recevoir l'étude</h3>
+          <p class="sub">Renseignez votre email professionnel, nous vous l'envoyons directement.</p>
+          <form class="lp-f" id="lp-form" onsubmit="submitLP(event)">
+            <label>Email professionnel</label>
+            <input type="email" name="email" placeholder="marie@enseigne.fr" required>
+            <div class="row">
+              <div><label>Prénom</label><input type="text" name="prenom" placeholder="Marie" required></div>
+              <div><label>Nom</label><input type="text" name="nom" placeholder="Dupont" required></div>
+            </div>
+            <label>Société / Enseigne</label>
+            <input type="text" name="societe" placeholder="Votre enseigne" required>
+            <label>Fonction</label>
+            <select name="fonction" required>
+              <option value="">Sélectionnez…</option>
+              <option>Marketing</option>
+              <option>Data / CRM</option>
+              <option>Direction générale</option>
+              <option>Autre</option>
+            </select>
+            <input type="hidden" name="_subject" value="Boost Platform, demande d'étude drive-to-store (Google Ads)">
+            <input type="hidden" name="source" value="LP Google Ads, mesure drive-to-store">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="_honey" style="display:none">
+            <button type="submit" class="lp-submit">Recevoir l'étude</button>
+            <p class="lp-legal">Vos informations servent uniquement à vous envoyer l'étude et à
+            traiter votre demande. Aucune cession à un tiers, désinscription à tout moment.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="lp-wrap lp-trust">
+  <div class="row">
+    <span class="b">Données hébergées en France</span>
+    <span class="b">Conformité RGPD</span>
+    <span class="b">Donnée propriétaire, sans cookies tiers</span>
+    <span class="b">Signaux de mobilité anonymisés</span>
+    <span class="b">Groupe Dékuple</span>
+  </div>
+</div>
+
+<div class="lp-wrap">
+  <div class="lp-final">
+    <h2>Vous voulez voir vos propres chiffres ?</h2>
+    <p>Nous prenons un périmètre borné de votre réseau et nous vous restituons ce que la mesure
+    donne réellement : zones de chalandise observées, visites incrémentales, coût par visite.</p>
+    <a href="https://alexgarnier-cloud.github.io/boost/demande/?objet=poc">Demander un audit drive-to-store →</a>
+  </div>
+</div>
+
+<div class="lp-foot">
+  <div>Boost Platform, le socle d'identité et de data propriétaire du retail et du local.</div>
+  <div>Données hébergées en France · Conformité RGPD</div>
+</div>
 <script>
-(function(){
-  var n=8, el=document.getElementById('cd');
-  setInterval(function(){ n--; if(el) el.textContent=n; if(n<=0) window.location.href='../'; }, 1000);
-})();
+function submitLP(e){
+  e.preventDefault();
+  var form=document.getElementById('lp-form');
+  var btn=form.querySelector('.lp-submit');
+  var orig=btn.textContent;
+  btn.disabled=true; btn.textContent='Envoi en cours…';
+  fetch('https://formsubmit.co/ajax/a.garnier@dekuple.com',{
+    method:'POST', headers:{'Accept':'application/json'}, body:new FormData(form)
+  }).then(function(r){return r.json();}).then(function(){
+    window.location.href='../merci/';
+  }).catch(function(){
+    btn.disabled=false; btn.textContent=orig;
+    alert("Une erreur est survenue lors de l'envoi. Merci de réessayer.");
+  });
+}
 </script>
 </body>
 </html>
