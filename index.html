@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Boost Platform, première plateforme de data collaboration pour le retail et le marketing local</title>
+<meta name="description" content="Boost Platform réconcilie vos identités clients cross-canal sur 40 millions de consommateurs français (données propriétaires) et relie le digital au trafic en point de vente via 45 millions de signaux GPS. Une vue client unifiée, activable et réellement mesurable.">
+<meta property="og:description" content="Boost Platform réconcilie vos identités clients cross-canal sur 40 millions de consommateurs français (données propriétaires) et relie le digital au trafic en point de vente via 45 millions de signaux GPS. Une vue client unifiée, activable et réellement mesurable.">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:ital,wght@0,300;0,400;0,500;1,400&family=Space+Mono:wght@400;700&display=swap');
 
@@ -1748,8 +1750,36 @@ table{max-width:100%}
 <section class="hero" id="top">
   <div class="kicker">Résolution d'identité · Data propriétaire · Retail &amp; Local</div>
   <h1>Première plateforme de <span class="ul-acc">data collaboration</span>.</h1>
-  <p class="sub">Boost Platform réconcilie vos identités clients cross-canal sur 40 millions de consommateurs français (données propriétaires) et relie le digital au trafic en point de vente via 45 millions de signaux GPS. Une vue client unifiée, activable et réellement mesurable.</p>
   
+  
+</section>
+
+<section id="pain">
+  <div class="kicker">Le point de départ</div>
+  <h2>Votre data est-elle prête pour l'IA ?</h2>
+  <div class="pain-grid">
+    <div class="pain-card">
+      <div class="pain-no">01</div>
+      <h3>Votre organisation peut-elle faire tourner de l'IA sur ses données ?</h3>
+      <div class="pain-fig">96 %</div>
+      <p>des organisations françaises ne sont pas prêtes pour l'IA : gouvernance non résolue, projets bloqués au stade du POC, budget data résiduel.</p>
+      <div class="pain-src">Baromètre national de la maturité Data &amp; IA des DSI en France, 2026 (Efalia, Laboratoire Hubert Curien, Wikit, soutenu par Bpifrance).</div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-no">02</div>
+      <h3>Faites-vous vraiment confiance à vos données clients ?</h3>
+      <div class="pain-fig">31 %</div>
+      <p>des dirigeants seulement font pleinement confiance à leurs données clients, alors que 91 % jugent leur gestion essentielle. Doublons, identités éclatées, référentiels divergents.</p>
+      <div class="pain-src">Stibo Systems, enquête auprès de 500 dirigeants d'entreprise.</div>
+    </div>
+    <div class="pain-card">
+      <div class="pain-no">03</div>
+      <h3>Vos données clients sont-elles réellement activables ?</h3>
+      <div class="pain-fig">17 %</div>
+      <p>des responsables marketing se disent très confiants dans leur capacité à exploiter leurs données de fidélité, l'actif pourtant le plus riche dont ils disposent.</p>
+      <div class="pain-src">Forrester Consulting pour Zeta, mai 2026, 310 décideurs fidélisation et marketing.</div>
+    </div>
+  </div>
 </section>
 
 <section id="discovery">
@@ -1760,7 +1790,7 @@ table{max-width:100%}
   <!-- ── 3 étapes ── -->
   <div class="dd-steps">
 
-    <!-- 01 Connexion sécurisée -->
+    <!-- 01 Onboarding de vos données -->
     <div class="dd-step s1">
       <div class="dd-step-head">
         <span class="dd-snum">01</span>
@@ -1770,7 +1800,7 @@ table{max-width:100%}
           </svg>
         </div>
       </div>
-      <h3>Connexion sécurisée</h3>
+      <h3>Onboarding de vos données</h3>
       <p>Vos données CRM, transactions et web sont connectées dans un environnement isolé et chiffré, aucune copie brute, aucune exposition d'identités personnelles.</p>
       <div class="dd-tech-list">
         <div class="dd-tech-item">
@@ -2327,6 +2357,22 @@ function ptTrack(which,btn){
 }
 // discovery form
 </script>
+
+<style>
+#pain{ border-top:1px solid #E6E2EC; }
+#pain .pain-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:30px; }
+#pain .pain-card{ background:#FFFFFF; border:1px solid #E6E2EC; border-top:3px solid #3B1C5F;
+  padding:26px 24px 24px; display:flex; flex-direction:column; }
+#pain .pain-card:nth-child(2){ border-top-color:#BAE500; }
+#pain .pain-no{ font-size:12.5px; font-weight:800; color:#3B1C5F; letter-spacing:.1em; }
+#pain .pain-card h3{ font-size:18px; font-weight:800; color:#0E0A16; line-height:1.35; margin-top:12px; }
+#pain .pain-fig{ font-size:44px; font-weight:800; color:#0E0A16; line-height:1; margin-top:20px;
+  background-image:linear-gradient(#BAE500,#BAE500); background-repeat:no-repeat;
+  background-size:100% 9px; background-position:0 92%; display:inline-block; align-self:flex-start; }
+#pain .pain-card p{ font-size:13.5px; color:#5B5566; line-height:1.6; margin-top:12px; }
+#pain .pain-src{ font-size:11.5px; color:#8A86A0; line-height:1.5; margin-top:auto; padding-top:14px; }
+@media (max-width:900px){ #pain .pain-grid{ grid-template-columns:1fr; } }
+</style>
 
 <style>
 /* Hero : depuis le retrait de l'acronyme BOOST (28/07), le hero ne contient plus que
