@@ -1733,6 +1733,14 @@ table{max-width:100%}
 <style>.kicker.c{text-align:center}.kicker.c::after{margin-left:auto;margin-right:auto}</style>
 
 <style>
+/* Hero : depuis le retrait de l'acronyme BOOST (28/07), le hero ne contient plus que
+   surtitre + titre + chapo. Le min-height:100vh d'origine laissait donc un grand vide
+   avant le bloc Data Discovery. On passe en hauteur automatique avec un rythme maitrise
+   (demande d'Alexandre du 28/07 : « reduit l'espace entre le bloc titre et le bloc discovery »). */
+.hero{ min-height:0 !important; padding-top:150px !important; padding-bottom:56px !important; }
+@media (max-width:760px){
+  .hero{ padding-bottom:36px !important; }
+}
 nav, footer{
   padding-left:max(20px, calc((100% - 1160px) / 2 + 24px)) !important;
   padding-right:max(20px, calc((100% - 1160px) / 2 + 24px)) !important;
