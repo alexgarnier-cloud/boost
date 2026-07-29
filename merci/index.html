@@ -1656,6 +1656,24 @@ h1 span.ul-acc, h2 span.ul-acc, h3 span.ul-acc{
 }
 @media (max-width:760px){ h1 span.ul-acc,h2 span.ul-acc{background-size:100% 7px} }
 
+/* Troisième ligne du titre : « By » + logo Dékuple (29/07). La règle générique
+   `.hero h1 span` plus bas pose un souligné lime sur TOUT span du H1 : on l'annule ici,
+   sinon la signature se retrouve surlignée comme un mot-clé. */
+.hero h1 span.h1-by, h1 span.h1-by{
+  background-image:none !important;
+  padding:0 !important;
+  display:inline-flex;
+  align-items:center;
+  gap:.34em;
+  font-size:.44em;
+  font-weight:500;
+  letter-spacing:.01em;
+  color:#5B5570 !important;
+  vertical-align:middle;
+}
+h1 .h1-dk{ height:1.55em; width:auto; display:inline-block; vertical-align:middle; }
+@media (max-width:760px){ .hero h1 span.h1-by{font-size:.5em} h1 .h1-dk{height:1.4em} }
+
 /* Même traitement pour les mots mis en avant dans les autres titres :
    le mot reste en encre, c'est le SOULIGNÉ qui porte le lime. */
 .offer h3 span, .dd-form-header h3 span, .pr-hero h2 span, .pr-bottom h3 span,
